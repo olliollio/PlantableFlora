@@ -5,15 +5,15 @@ Players dig a planting hole, water it and plant tree and bush seeds they find in
 **Steam Workshop:** not published yet.  
 **Feedback, bugs, ideas:** [GitHub issues](https://github.com/olliollio/PlantableFlora/issues)
 
-![Grow shade and fruit on Badlands](Artwork/Screenshots/plantableFlora_01.png)
+![PlantableFlora on Badlands](Artwork/Screenshots/plantableFlora_01.png)
 
 ## What it does
 
 - **Seeds** come from loot, from searching wild trees ("Search for seeds", 0-3 seeds), from cutting wild bushes and from fruit ("Get seeds" with a knife). Grown planted trees give seeds and fruit too.
 - **Planting** needs a hole dug with a shovel (60 cm soil heap) and water; fertilizer (garden lime, plant material) makes plants grow faster. An empty vanilla garden plot works too.
 - **Growth:** seedling → young → full-grown, real time (default: bushes 1 h, trees 12 h). Fully grown trees can be felled (logs, sticks, stump), bushes cut (sticks, they grow back) or dug up.
-- **Maps:** Chernarus and Livonia (16 trees + forest variants, 6 bushes), Badlands with its own species (fig, Turkish pine, olive, date palm, poplar, ash, plum; oleander, fig bush, prickly pear, cycas, Syrian rue) and its own soil look. Seeds only grow on their own map. Frostline works with the Chernarus species.
-- **Fair play:** no planting in other players' bases, near roads, buildings or stashes, in caves or admin no-plant zones. Limits per player (inside / outside the own base), per base and per server. Plants outside a base decay like base building.
+- **Maps:** Chernarus and Livonia (16 trees + forest variants, 6 bushes), Badlands with its own species (fig, Turkish pine, olive, date palm, poplar, ash, plum; oleander, fig bush, prickly pear, cycas, Syrian rue) and its own soil look: cover, wood and fruit where almost nothing grows. Seeds only grow on their own map. Frostline works with the Chernarus species.
+- **Fair play:** no planting in other players' bases, near roads or buildings, in caves or admin no-plant zones; no trees on stashes (a bush on top hides a stash). Limits per player (inside / outside the own base), per base and per server. Plants outside a base decay like base building.
 - **Not recognizable:** planted trees have no name and offer the same actions as wild ones.
 - Fully configurable by server admins through `config.json`.
 

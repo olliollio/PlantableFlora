@@ -6,18 +6,18 @@ For server admins. Work in progress. Sections 1-6 explain the mod, section 7 lis
 
 ## 1. What the mod does
 
-Players plant trees and bushes from seeds, for example to hide a base or to grow cover and firewood.
+Players plant trees and bushes from seeds: to hide a base, grow cover, plant an orchard, or for firewood.
 
-- **Seeds** come from loot, from cutting wild bushes and from searching wild trees.
-- **Planting** takes effort: dig a planting mound with a digging tool, optionally fertilize and water it, then plant the seed.
-- **Growth** runs on real time (offline time counts): a sapling becomes a full-grown bush in 1 hour and a full-grown tree in 12 hours (defaults).
-- **Bushes** can be cut (they grow back) or dug up (gone). **Trees** are felled with an axe: logs, sticks and (for spruce, oak, pine, beech) a stump. Felled trees never grow back.
-- **Planted plants look like wild ones.** No name panel, no inventory entry, the vanilla "Harvest" prompts. A player can't tell a planted tree from a wild one by looking at it.
-- **Bases are protected.** By default nobody can plant inside another player's base (60 m around a territory flag they are not a member of).
-- **Limits** per player, per base and per server keep the number of plants under control (section 5).
+- **Seeds** come from loot, from searching wild trees, from cutting wild bushes and from fruit (cut with a knife). Fully grown planted trees give seeds and fruit too.
+- **Planting** takes effort: dig a planting hole with a digging tool, water it (fertilizer is optional and makes it grow faster), then plant the seed. An empty vanilla garden plot works too.
+- **Growth** runs on real time (offline time counts): a small seedling on its soil heap grows into a young and then a full-grown plant. Defaults: bushes 1 hour, trees 12 hours.
+- **Bushes** can be cut (they grow back) or dug up (gone). **Trees** are felled with an axe: logs, sticks and, for some species, a stump. Felled trees never grow back.
+- **Planted plants look like wild ones.** No name panel, no inventory entry, the same actions and prompts as wild plants. From the young stage on a player can't tell a planted tree from a wild one.
+- **Bases are protected.** By default nobody can plant inside another player's base (60 m around a territory flag they are not a member of). Trees can't be planted on stashes, but a **bush on top of a stash hides it** (4.3).
+- **Maps:** Chernarus and Livonia share their species; **Badlands has its own species and soil look**; seeds only grow on their own map (2.6).
+- **Limits** per player (inside and outside the own base), per base and per server keep the number of plants under control (section 5).
 - **Plants decay like base building:** they live 45 days unless an active territory flag nearby refreshes them.
-
-Species: 15 trees (spruce, oak, pine, beech, birch, larch, ash, walnut, hornbeam, white poplar, willow, rowan, acacia + fruit trees apple, pear, plum) and 6 bushes (rose, hazel, hawthorn, blackthorn, elder, dwarf birch). Spruce, oak, pine, beech, birch, larch and acacia also have a "forest" seed that grows the tall, bare-trunk forest variant.
+- Messages to players are vanilla notification popups (top right).
 
 ---
 
@@ -77,6 +77,16 @@ Entries are usage Farm/Village, tier 1-2, nominal 3-4. Tune `nominal`/`min` like
 | Frostline | the Chernarus species (not adapted to the winter look yet) |
 | Other maps | the Chernarus species; wild trees only give seeds if the map uses vanilla tree models |
 
+**Tested (0.1.0):**
+
+| Map | Status |
+|---|---|
+| Chernarus | fully tested |
+| Livonia | all growth stages and heights checked; same species and mechanics as Chernarus |
+| Badlands | fully tested: own species, heights, soil look, wild seeds, fruit, caves |
+| Frostline | works (planting, growth, wild seeds from birch and spruce); planted deciduous trees keep their summer look |
+| Namalsk, Deer Isle and other maps | not tested. Vanilla tree models give seeds, own models of a map mod don't (see 9) |
+
 Badlands soil: only soil, green grass, mud and the pine forest floor are fertile (vanilla), about 40 % of the land.
 On Badlands planting holes and seedling heaps use the map's own light earth (limed: with light gravel) instead of the dark garden soil.
 
@@ -96,9 +106,9 @@ On Badlands planting holes and seedling heaps use the map's own light earth (lim
 ### 3.2 Planting
 
 1. **Dig a planting hole.** Hold a digging tool and use "Dig planting hole" on the ground. Digging tools: shovel, field shovel, farming hoe (everything vanilla lets you dig a garden plot with). All placement rules (section 4) are checked here.
-2. **Water the mound** (required by default) **and optionally fertilize it.** A container with at least 500 ml of water → "Water". Garden lime or plant material (compost) in hands → "Fertilize". Rain also waters a hole: after `RainWaterMinutes` (10) of rain it counts as watered. Without water the seed can't be planted ("Needs water first"); `RequireWater` switches that off, `RequireFertilizer` makes fertilizer required too. Every growth step gets faster: water 25 %, garden lime 30 %, plant material 15 % (water + lime: 55 %).
-3. **Plant.** The seed preview snaps to the mound, "Plant" uses up the mound.
-4. An unused mound disappears after 60 minutes. A digging tool in hands can "Fill in planting hole".
+2. **Water the hole** (required by default) **and optionally fertilize it.** A container with at least 500 ml of water → "Water". Garden lime or plant material (compost) in hands → "Fertilize". Rain also waters a hole: after `RainWaterMinutes` (10) of rain it counts as watered. Without water the seed can't be planted ("Needs water first"); `RequireWater` switches that off. `RequireFertilizer` makes fertilizer required for **trees** (bushes only ever need water). Fertilizer makes every growth step faster: garden lime 30 %, plant material 15 % (water gives no bonus by default, `WaterBonus`).
+3. **Plant.** The seed preview snaps to the hole, "Plant" uses up the hole; the seedling stands on its soil heap.
+4. An unused hole disappears after 60 minutes. A digging tool in hands can "Fill in planting hole".
 
 An empty vanilla garden plot also works as a mound (`AllowGardenPlot`); one fertilized/watered slot counts for the whole plot (bonus and requirements; a limed slot beats a composted one). With `RequirePreparedGround` off, seeds are planted straight into the ground (a digging tool must be in the inventory) and `RequireWater` / `RequireFertilizer` have no effect.
 
@@ -116,7 +126,7 @@ An empty vanilla garden plot also works as a mound (`AllowGardenPlot`); one fert
 | Action | Tool | Time | Result |
 |---|---|---|---|
 | Cut bush ("Harvest Long Wooden Stick") | knife, machete, sickle, axe, sword | `CutSeconds` 5 | Sticks, bush vanishes and grows back after `BushRegrowSeconds` (1 h) |
-| Fell tree ("Harvest Wooden Log") | hatchet, wood axe, firefighter axe | `FellSeconds` 45 | 3 logs + 4 long sticks, stump for spruce/oak/pine/beech. Never grows back. |
+| Fell tree ("Harvest Wooden Log") | hatchet, wood axe, firefighter axe | `FellSeconds` 45 | 3 logs + 4 long sticks, stump for spruce, oak, pine, beech and Turkish pine. Never grows back. |
 | Dig up | digging tool in hands | `DigUpSeconds` 20 | Removes a bush, young tree or stump for good. Full-grown trees must be felled first. |
 
 Anyone can cut, fell or dig up any planted plant, owner or not.
@@ -129,7 +139,9 @@ Checked when digging the mound (on the server, the client shows the reason in th
 
 | Rule | Default | Prompt |
 |---|---|---|
-| Fertile ground (grass, soil, forest floor) | – | (preview red) |
+| Seed from another map (2.6) | – | "This seed won't grow here" |
+| Fertile ground (grass, soil, forest floor) | – | (preview red, dig prompt hidden) |
+| Caves and underground (more than 1.5 m below the terrain surface) | – | "Not enough light to grow here" |
 | Admin no-plant zones | none | "No planting in this area" |
 | Strict mode: own flag nearby | off | "Needs your own territory flag nearby" |
 | Road: no road within `RoadClearance` | 5 m | "Too close to a road" |
@@ -174,11 +186,13 @@ If a flag pole is dismantled or destroyed, the plants around it stay. Nobody can
 
 ### 4.3 Underground stashes
 
-Trees can't be planted within 2 m of a buried stash (the trunk would block digging it out). Bushes may sit on top. Silent, like the base rule.
+Trees can't be planted within 2 m of a buried stash (the trunk would block digging it out). Silent, like the base rule.
+
+**Bushes may sit right on top of a stash**: planting a bush over your stash in the woods hides it. The stash can still be dug out next to the bush, and anyone can cut or dig up the bush.
 
 ### 4.4 Roads
 
-Road-network roads (asphalt/concrete country roads) and painted road surfaces (`RoadSurfaces`: dirt, gravel, concrete) count. `RoadClearance` 0 switches the rule off.
+Roads of the map's road network (asphalt, concrete and dirt roads) count, plus painted paved surfaces (`RoadSurfaces`: concrete, gravel). Painted dirt (`cp_dirt`) is not a road: it is fertile and also covers farmyards and field edges. `RoadClearance` 0 switches the rule off.
 
 ---
 
@@ -220,7 +234,7 @@ Set `WipeAllPlants` to `true` and restart. 30 s after the start every planted pl
 
 ### 6.3 Debug logs
 
-`DebugLogs` writes detailed `[PlantableFlora]` lines into the script logs (placement decisions, growth, lifetimes). It also shows plant names in the look-at panel ("Planted Beech"), so **keep it off on live servers**.
+`DebugLogs` writes detailed `[PlantableFlora]` lines into the script logs (placement decisions, growth, lifetimes). It also shows plant names in the look-at panel ("Planted Beech"), so **keep it off on live servers**. With it on, a red garden plot preview logs why (ground, blocking object, surface) in the client log.
 
 ---
 
@@ -332,7 +346,6 @@ Planting only inside your own base, nothing in the open world.
 "MaxBushesPerBase": 30
 ```
 
-Note: a required step always gives its bonus too. `WaterBonus` is 0 by default, so with `RequireWater` on the grow times stay exact; a bonus only makes sense for an optional step.
 
 ### 8.3 Casual
 
@@ -355,3 +368,82 @@ Slow growth, fewer seeds.
 "WildBushSeedChance": 0.15,
 "MaxTreesPerPlayer": 5
 ```
+
+---
+
+## 9. Adding your own species (modders)
+
+There is no `config.json` key for new species: a plant needs a model, and a model is only reachable through a config class. Species can be added with **a small extra addon** (own PBO, loaded after PlantableFlora), **without any script**:
+
+```cpp
+class CfgPatches
+{
+	class MyPlants
+	{
+		units[] = {};
+		weapons[] = {};
+		requiredVersion = 0.1;
+		requiredAddons[] = { "PlantableFlora" };
+	};
+};
+class CfgVehicles
+{
+	class PF_Seedling;
+	class PF_Bush_Base;
+	class PF_Seed_Base;
+	// tree: seedling -> middle -> full-grown
+	class PF_Tree_MyMaple_Young: PF_Seedling
+	{
+		scope = 2;
+		pf_nextStage = "PF_Tree_MyMaple_Medium";
+		pf_kind = "treeStep";
+		pf_isTree = 1;
+	};
+	class PF_Tree_MyMaple_Medium: PF_Bush_Base
+	{
+		scope = 2;
+		model = "\MyMap\plants\maple_small.p3d";
+		pf_groundOffset = 2.0;		// height of the model origin above the ground (m)
+		pf_nextStage = "PF_Tree_MyMaple";
+		pf_kind = "treeStep";
+		pf_isTree = 1;
+	};
+	class PF_Tree_MyMaple: PF_Bush_Base
+	{
+		scope = 2;
+		model = "\MyMap\plants\maple_big.p3d";
+		pf_groundOffset = 5.5;
+		pf_fellClass = "none";		// or a stump class
+		pf_isTree = 1;
+	};
+	class PF_Tree_MyMaple_Placing: PF_Tree_MyMaple_Young
+	{
+		scope = 1;
+		storageCategory = 10;
+		pf_isProjection = 1;
+	};
+	class PF_Seed_MyMaple: PF_Seed_Base
+	{
+		scope = 2;
+		displayName = "Maple Seed";
+		projectionTypename = "PF_Tree_MyMaple_Placing";
+		pf_plantClass = "PF_Tree_MyMaple_Young";
+		pf_isTree = 1;
+	};
+};
+class CfgPlantableFlora
+{
+	class Wild
+	{
+		// wild map model (part of its path, lower case) -> seed; the longest match wins
+		class MyMaple { source = "tree"; match[] = { "myplants\maple" }; seed = "PF_Seed_MyMaple"; };
+	};
+};
+```
+
+- Bushes work the same way: `PF_Bush_<n>_Seedling` (from `PF_Seedling`, `pf_kind = "bushStep"`) -> `_Young` -> full-grown with `pf_cutClass` and a `_Cut` class (see the Chernarus bushes in the mod's `config.cpp`).
+- `pf_world = "<world name>"` on every class makes the species grow only on that map; a map listed in `CfgPlantableFlora exclusiveWorlds[]` only grows its own species.
+- `CfgPlantableFlora Soil <world> { texture; limedTexture; }` gives planting holes the look of the map's soil.
+- Add the seed to the mission `types.xml` like any item.
+- Dial in `pf_groundOffset` in game: with `DebugLogs`, `TreeLineup` and `GroundOffsetOverrides` (development keys) the heights can be changed live.
+- A wild model of a map mod that should simply give an **existing** seed (e.g. the map's own spruce -> `PF_Seed_Spruce`) only needs the `CfgPlantableFlora Wild` entry.
