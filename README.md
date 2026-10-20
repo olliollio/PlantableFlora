@@ -2,7 +2,7 @@
 
 Players dig a planting hole, water it and plant tree and bush seeds they find in the world. A small seedling grows over hours into a real map tree or bush: hide a base, grow cover, start an orchard. Planted plants look exactly like the wild ones.
 
-**Steam Workshop:** not published yet.  
+**Steam Workshop:** https://steamcommunity.com/sharedfiles/filedetails/?id=3823449997  
 **Feedback, bugs, ideas:** [GitHub issues](https://github.com/olliollio/PlantableFlora/issues)
 
 ![PlantableFlora on Badlands](Artwork/Screenshots/plantableFlora_01.png)

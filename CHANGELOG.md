@@ -3,9 +3,9 @@
 Format follows [Keep a Changelog](https://keepachangelog.com/). The version is `version` in `release/mod.cpp`.
 Config changes: new keys are added to an existing `config.json` automatically, existing values stay.
 
-## [0.1.0] - unreleased
+## [0.1.0] - 2026-10-20
 
-First Workshop test build.
+First Workshop test build: https://steamcommunity.com/sharedfiles/filedetails/?id=3823449997
 
 ### Added
 - Planting: dig a planting hole (shovel), water it (required by default), optionally fertilize it (garden lime, plant material: faster growth), plant a seed. Empty vanilla garden plots work too.
