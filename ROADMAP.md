@@ -1,0 +1,30 @@
+# Roadmap
+
+What may come after 0.1.0. Nothing here is a promise, order and details can change. Ideas and wishes are welcome: [open an issue](https://github.com/olliollio/PlantableFlora/issues).
+
+## Next (v1.1)
+
+- **Real shade on Badlands.** Today a tree's shade is only a look: vanilla DayZ has no shade mechanic, its temperature has no sun component per position. Planned: during the day a player under the crown of any tree, wild or planted, gets a lower temperature. Strength and maps set by the server admin, off with one setting.
+- **Map mods without an addon.** Admins of custom maps (Namalsk, Deer Isle, …) can tell the mod in `config.json` which wild tree of their map gives which seed, e.g. the map's own spruce gives spruce seeds. No extra PBO needed for that.
+- **Frostline look.** Planted trees take the winter or late-fall look of the wild trees around them instead of the green summer models.
+
+## Planned
+
+- **Dry maps need more water.** A Badlands tree needs more water than a Chernarus tree, poured in several steps. Admin settings per map and per species (olive and date palm are drought hardy).
+- **Re-watering.** Optionally, trees on dry maps must be watered again until they are grown, otherwise they wither.
+- **More ground for planting on Badlands.** Optional admin setting to allow dry grass and sand (vanilla only allows about 40 % of the land), with a higher water need.
+- **Winter maps:** frozen ground can only be dug where a fire has burned for a while; digging takes longer on frozen ground.
+- **Fruit again.** Own fruit trees bear again after some time (today: once per player per server restart).
+- **Namalsk and Deer Isle** tested and supported.
+
+## Ideas (not decided)
+
+- **Crowded trees thin out.** Trees may be planted closer (1 m), but in a dense group the youngest may die while growing, like in a real forest. The planting prompt warns.
+- **Falling trees.** A felled tree falls over and leaves a trunk next to the stump.
+- **Seed models per species** (acorn, cone, berries), so experienced players recognise a seed.
+- **Old giants.** After a very long time a tree grows into the largest vanilla size.
+- **Growth waits when something is in the way** (a car or a wall on the spot) instead of growing into it.
+
+## Done
+
+See [CHANGELOG.md](CHANGELOG.md).

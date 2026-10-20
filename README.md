@@ -21,6 +21,7 @@ Players dig a planting hole, water it and plant tree and bush seeds they find in
 
 | Guide | For |
 |---|---|
+| [Roadmap](ROADMAP.md) | What may come next (real shade on Badlands, map mods, Frostline look, …) |
 | [Admin guide](docs/ADMIN.md) | Server owners: install, loot, species per map, `config.json`, every setting, presets |
 | [Tester guide](docs/TESTER.md) | Testers: what to try |
 
@@ -33,7 +34,7 @@ Players dig a planting hole, water it and plant tree and bush seeds they find in
 
 ## Status
 
-Test build (0.1.0). See [CHANGELOG.md](CHANGELOG.md).
+Test build (0.1.0). See [CHANGELOG.md](CHANGELOG.md) and the [roadmap](ROADMAP.md).
 
 ## Repository layout
 
