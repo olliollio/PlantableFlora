@@ -13,6 +13,7 @@ Players dig a planting hole, water it and plant tree and bush seeds they find in
 - **Planting** needs a hole dug with a shovel (60 cm soil heap) and water; fertilizer (garden lime, plant material) makes plants grow faster. An empty vanilla garden plot works too.
 - **Growth:** seedling → young → full-grown, real time (default: bushes 1 h, trees 12 h). Fully grown trees can be felled (logs, sticks, stump), bushes cut (sticks, they grow back) or dug up.
 - **Maps:** Chernarus and Livonia (16 trees + forest variants, 6 bushes), Badlands with its own species (fig, Turkish pine, olive, date palm, poplar, ash, plum; oleander, fig bush, prickly pear, cycas, Syrian rue) and its own soil look: cover, wood and fruit where almost nothing grows. Seeds only grow on their own map. Frostline works with the Chernarus species.
+- **Real shade on Badlands:** vanilla Badlands heats up players in the sun (up to +9.6 °C at noon) and never counted trees as shade. Now the crown of any tree, wild or planted, gives shade that moves with the sun. Plant a grove, get a cool spot.
 - **Fair play:** no planting in other players' bases, near roads or buildings, in caves or admin no-plant zones; no trees on stashes (a bush on top hides a stash). Limits per player (inside / outside the own base), per base and per server. Plants outside a base decay like base building.
 - **Not recognizable:** planted trees have no name and offer the same actions as wild ones.
 - Fully configurable by server admins through `config.json`.
@@ -21,7 +22,7 @@ Players dig a planting hole, water it and plant tree and bush seeds they find in
 
 | Guide | For |
 |---|---|
-| [Roadmap](ROADMAP.md) | What may come next (real shade on Badlands, map mods, Frostline look, …) |
+| [Roadmap](ROADMAP.md) | What may come next (map mods, Frostline look, more water on dry maps, …) |
 | [Admin guide](docs/ADMIN.md) | Server owners: install, loot, species per map, `config.json`, every setting, presets |
 | [Tester guide](docs/TESTER.md) | Testers: what to try |
 
@@ -34,7 +35,7 @@ Players dig a planting hole, water it and plant tree and bush seeds they find in
 
 ## Status
 
-Test build (0.1.0). See [CHANGELOG.md](CHANGELOG.md) and the [roadmap](ROADMAP.md).
+Test build (0.2.0). See [CHANGELOG.md](CHANGELOG.md) and the [roadmap](ROADMAP.md).
 
 ## Repository layout
 

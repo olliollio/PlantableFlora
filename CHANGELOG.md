@@ -3,6 +3,15 @@
 Format follows [Keep a Changelog](https://keepachangelog.com/). The version is `version` in `release/mod.cpp`.
 Config changes: new keys are added to an existing `config.json` automatically, existing values stay.
 
+## [0.2.0] - unreleased
+
+### Added
+- **Real shade on Badlands.** Vanilla Badlands adds sun heat to players in the open (up to +8 °C at noon, +9.6 °C without a hat) but never counted trees as shade. Now the crown of any tree, wild or planted, is shade: no sun heat underneath. The shade follows the sun (under the crown at noon, away from the sun in the morning and evening). Other maps have no sun heat and are not affected. Off with `TreeShade` false.
+- Shade overlay for admins: `ShadeDebug` + `AdminIds` (Steam64 IDs). Shows bottom left whether you stand in tree shade and how much sun heat it removes; Numpad 9 shows/hides it.
+
+### Config
+- New keys: `TreeShade` (true), `ShadeDebug` (false), `AdminIds` ([]). Added to an existing `config.json` automatically.
+
 ## [0.1.0] - 2026-10-20
 
 First Workshop test build: https://steamcommunity.com/sharedfiles/filedetails/?id=3823449997

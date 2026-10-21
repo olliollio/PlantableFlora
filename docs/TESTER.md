@@ -123,6 +123,14 @@ Planted trees and bushes must not be recognizable. Look for anything that gives 
 2. Server restart: same.
 3. Walk 200+ m away and come back: plants still there.
 
+
+### 3.8 Shade (Badlands, by day, clear sky)
+
+1. Stand in the open sun for a minute, note the temperature (thermometer icon). Then stand under the crown of a big wild tree for a minute: it should get cooler.
+2. Same under a fully grown planted tree: cooler too. Under a seedling or young sapling: no change.
+3. In the morning or evening: the shade is on the side away from the sun, not all around the tree. Standing under the crown edge on the sun side should not cool you.
+4. Does it feel right? Too strong, too weak, too slow to kick in?
+
 ---
 
 ## 4. How to report

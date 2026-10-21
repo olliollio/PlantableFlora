@@ -4,6 +4,7 @@ class PF_RPC
 	static const int SYNC_CONFIG = 714300101;	// server -> client: config
 	static const int SYNC_COUNT = 714300102;	// server -> owner client: how many trees and bushes they own (outside / inside their bases)
 	static const int SYNC_FLAGS = 714300103;	// server -> client: territory flags the player is a member of
+	static const int SHADE_INFO = 714300104;	// server -> client: shade debug text (config ShadeDebug), every 2 s
 }
 
 // Admin zone without planting (traders, safe zones, events): world position (Y is ignored) + radius in m
@@ -89,9 +90,13 @@ class PF_Config
 	int FruitMaxPerSearch = 2;		// 1 + up to this many extra fruits
 	float WildBushSeedChance = 0.3;	// chance per seed when a wild bush is fully cut, up to 3 seeds (0-3)
 
+	// world
+	bool TreeShade = true;			// a player under a tree crown (wild or planted) is in the shade: no vanilla sun heat (only Badlands has it, up to +9.6 °C at noon); false = vanilla (trees cast no shade)
+
 	// admin
 	int StatsMinutes = 10;			// write plant counts per kind/owner with positions to PlantableFlora/stats.txt (+ one line in the script log) this often; 0 = off
-	bool WipeAllPlants = false;		// true: 30 s after the next server start every planted plant, stump and planting mound is deleted, then this switches back to false
+	bool WipeAllPlants = false;
+	ref array<string> AdminIds;	// Steam64 IDs of admins who get the admin debug tools (ShadeDebug overlay); not sent to clients		// true: 30 s after the next server start every planted plant, stump and planting mound is deleted, then this switches back to false
 
 	// debugging / development
 	bool DebugLogs = false;			// verbose [PlantableFlora] lines in the script logs
@@ -102,6 +107,7 @@ class PF_Config
 	bool TreeLineup = false;		// DEV: when the first player joins, one stage of every tree species is planted in a grid in front of them; switches back to false
 	string TreeLineupStage = "Medium";	// DEV: stage for TreeLineup: "Young" (seedling), "Medium" or "Mature"
 	bool FreezeGrowth = false;		// DEV: no plant grows while true (keep a lineup at its stage)
+	bool ShadeDebug = false;		// admin tool: for players in AdminIds the shade check runs every 2 s (vanilla 30 s) and the result is shown bottom left (planted/wild tree, sun heat, air temperature); Numpad 9 shows/hides it
 	ref array<ref PF_OffsetOverride> GroundOffsetOverrides;	// DEV: [{"PlantClass": "PF_Tree_Hornbeam", "Offset": 1.2}]; with DebugLogs re-read every 10 s, plants move live
 
 	// extra ground offset of a plant class from GroundOffsetOverrides (0 if none)
@@ -122,6 +128,15 @@ class PF_Config
 		RoadSurfaces = DefaultRoadSurfaces();
 		NoPlantZones = new array<ref PF_NoPlantZone>();
 		GroundOffsetOverrides = new array<ref PF_OffsetOverride>();
+		AdminIds = new array<string>();
+	}
+
+	// server: player is in AdminIds (Steam64 ID, or the hashed DayZ ID)
+	bool IsAdmin(PlayerIdentity identity)
+	{
+		if (!identity || !AdminIds)
+			return false;
+		return AdminIds.Find(identity.GetPlainId()) >= 0 || AdminIds.Find(identity.GetId()) >= 0;
 	}
 
 	// Chernarus terrain surfaces of paved ground. Not cp_dirt (2026-10-20): it is fertile and painted on farmyards and
@@ -175,6 +190,8 @@ class PF_Config
 				s_Instance.NoPlantZones = new array<ref PF_NoPlantZone>();
 			if (!s_Instance.GroundOffsetOverrides)
 				s_Instance.GroundOffsetOverrides = new array<ref PF_OffsetOverride>();
+			if (!s_Instance.AdminIds)
+				s_Instance.AdminIds = new array<string>();
 		}
 		else
 		{
@@ -197,7 +214,12 @@ class PF_Config
 	// server -> one client (called when the client connects)
 	static void SendTo(PlayerIdentity identity)
 	{
-		g_Game.RPCSingleParam(null, PF_RPC.SYNC_CONFIG, new Param1<PF_Config>(Get()), true, identity);
+		// the admin list stays on the server
+		PF_Config cfg = Get();
+		array<string> admins = cfg.AdminIds;
+		cfg.AdminIds = new array<string>();
+		g_Game.RPCSingleParam(null, PF_RPC.SYNC_CONFIG, new Param1<PF_Config>(cfg), true, identity);
+		cfg.AdminIds = admins;
 	}
 
 	int GrowSecondsFor(string kind)
@@ -231,6 +253,7 @@ class PF_ClientState
 	static int OwnBushes;
 	static int OwnTreesInBase;	// inside own bases
 	static int OwnBushesInBase;
+	static string ShadeInfo;	// DEV: last shade debug text from the server (config ShadeDebug)
 
 	// " (Trees 3/10, Bushes 7/10)" or " (Base: Trees 1/4, Bushes 0/6)" for the dig/plant prompts
 	static string CountsText(bool inBase)

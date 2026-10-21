@@ -34,6 +34,14 @@ modded class DayZGame
 			return;
 		}
 
+		if (!target && rpc_type == PF_RPC.SHADE_INFO)
+		{
+			Param1<string> shade = new Param1<string>("");
+			if (ctx.Read(shade))
+				PF_ClientState.ShadeInfo = shade.param1;
+			return;
+		}
+
 		super.OnRPC(sender, target, rpc_type, ctx);
 	}
 }

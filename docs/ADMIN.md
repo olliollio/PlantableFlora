@@ -6,7 +6,7 @@ For server admins. Work in progress. Sections 1-6 explain the mod, section 7 lis
 
 ## 1. What the mod does
 
-Players plant trees and bushes from seeds: to hide a base, grow cover, plant an orchard, or for firewood.
+Players plant trees and bushes from seeds: to hide a base, grow cover or hide stash with a bush. On Badlands every tree, wild or planted, also gives real shade from the hot sun.
 
 - **Seeds** come from loot, from searching wild trees, from cutting wild bushes and from fruit (cut with a knife). Fully grown planted trees give seeds and fruit too.
 - **Planting** takes effort: dig a planting hole with a digging tool, water it (fertilizer is optional and makes it grow faster), then plant the seed. An empty vanilla garden plot works too.
@@ -15,6 +15,7 @@ Players plant trees and bushes from seeds: to hide a base, grow cover, plant an 
 - **Planted plants look like wild ones.** No name panel, no inventory entry, the same actions and prompts as wild plants. From the young stage on a player can't tell a planted tree from a wild one.
 - **Bases are protected.** By default nobody can plant inside another player's base (60 m around a territory flag they are not a member of). Trees can't be planted on stashes, but a **bush on top of a stash hides it** (4.3).
 - **Maps:** Chernarus and Livonia share their species; **Badlands has its own species and soil look**; seeds only grow on their own map (2.6).
+- **Real shade on Badlands.** Vanilla Badlands heats up a player standing in the sun (up to +8 °C at noon, +9.6 °C without a hat), but only buildings, roofs, rocks and terrain gave shade, never a tree. With the mod the crown of any tree, wild or planted, gives shade too (3.5).
 - **Limits** per player (inside and outside the own base), per base and per server keep the number of plants under control (section 5).
 - **Plants decay like base building:** they live 45 days unless an active territory flag nearby refreshes them.
 - Messages to players are vanilla notification popups (top right).
@@ -131,6 +132,21 @@ An empty vanilla garden plot also works as a mound (`AllowGardenPlot`); one fert
 
 Anyone can cut, fell or dig up any planted plant, owner or not.
 
+### 3.5 Shade (Badlands)
+
+Badlands is the only vanilla map with **sun heat**: by day a player in the open gets extra temperature (dawn +2, morning +6, noon +8, afternoon +4, evening +2 °C; x1.2 without a hat, less with one; clouds fade it out). Vanilla takes it away in buildings, under roofs and in the shadow of rocks or terrain, but never under a tree: tree crowns have no collision, so the game didn't see them.
+
+With the mod (`TreeShade`, on by default) a tree crown is shade:
+
+- **Any tree**, wild or planted, from about 4 m height. Seedlings and young saplings don't shade, bushes don't.
+- **The shade follows the sun.** It is where the crown blocks the line from the player's head to the sun: at noon under the crown, in the morning and evening on the side away from the sun, like the real shadow (a bit rougher, box-shaped).
+- **How much:** exactly the vanilla sun heat, nothing invented. Under a tree the player gets the same temperature as in the shadow of a building or rock.
+- **Timing:** the game checks the shade every 30 s (vanilla) and heat comfort changes gradually, so cooling down takes a moment.
+- **Other maps** have no sun heat, nothing changes there.
+- Planted trees shade exactly like wild ones, so the shade gives nothing away.
+
+A grove next to the base is a cool spot to wait out the midday sun.
+
 ---
 
 ## 4. Placement rules
@@ -236,6 +252,10 @@ Set `WipeAllPlants` to `true` and restart. 30 s after the start every planted pl
 
 `DebugLogs` writes detailed `[PlantableFlora]` lines into the script logs (placement decisions, growth, lifetimes). It also shows plant names in the look-at panel ("Planted Beech"), so **keep it off on live servers**. With it on, a red garden plot preview logs why (ground, blocking object, surface) in the client log.
 
+### 6.4 Shade overlay
+
+To see the shade at work: put your Steam64 ID into `AdminIds`, set `ShadeDebug` to `true` and restart. For those admins the shade check runs every 2 s and a text box bottom left shows the result: in the shade of a planted tree, a wild tree, vanilla shade (trunk, roof, building, terrain) or in the sun; the tree's class and model; the sun heat removed or added; the air temperature. **Numpad 9** shows/hides the box. Other players see nothing and get no extra checks. Switch it off when done.
+
 ---
 
 ## 7. Settings reference
@@ -325,8 +345,16 @@ Set `WipeAllPlants` to `true` and restart. 30 s after the start every planted pl
 |---|---|---|
 | `StatsMinutes` | 10 | `stats.txt` interval, 0 = off |
 | `WipeAllPlants` | false | Delete everything on the next start |
+| `AdminIds` | [] | Steam64 IDs of admins who get the admin tools (6.4), e.g. `["76561198000000000"]`. Stays on the server, clients never receive it. |
 | `DebugLogs` | false | Verbose logs, plant names visible. Off on live servers. |
 | `PerfLog`, `StressTestCount`, `StressTestX`, `StressTestZ`, `TreeLineup`, `TreeLineupStage`, `FreezeGrowth`, `GroundOffsetOverrides` | off/empty | Development tools. Leave them alone. |
+
+### 7.8 Shade (3.5)
+
+| Key | Default | What |
+|---|---|---|
+| `TreeShade` | true | A tree crown (wild or planted, from about 4 m) is shade: no vanilla sun heat underneath. Only maps with sun heat (Badlands). false = vanilla, trees give no shade. |
+| `ShadeDebug` | false | Shade overlay for the admins in `AdminIds` (6.4). |
 
 ---
 

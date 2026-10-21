@@ -1,1 +1,1 @@
-*.c;*.paa;*.rvmat;*.json;*.txt
+*.c;*.paa;*.rvmat;*.json;*.txt;*.layout

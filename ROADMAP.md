@@ -1,10 +1,9 @@
 # Roadmap
 
-What may come after 0.1.0. Nothing here is a promise, order and details can change. Ideas and wishes are welcome: [open an issue](https://github.com/olliollio/PlantableFlora/issues).
+What may come after 0.2.0. Nothing here is a promise, order and details can change. Ideas and wishes are welcome: [open an issue](https://github.com/olliollio/PlantableFlora/issues).
 
 ## Next (v1.1)
 
-- **Real shade on Badlands.** Today a tree's shade is only a look: vanilla DayZ has no shade mechanic, its temperature has no sun component per position. Planned: during the day a player under the crown of any tree, wild or planted, gets a lower temperature. Strength and maps set by the server admin, off with one setting.
 - **Map mods without an addon.** Admins of custom maps (Namalsk, Deer Isle, …) can tell the mod in `config.json` which wild tree of their map gives which seed, e.g. the map's own spruce gives spruce seeds. No extra PBO needed for that.
 - **Frostline look.** Planted trees take the winter or late-fall look of the wild trees around them instead of the green summer models.
 
