@@ -1,10 +1,10 @@
 // Own RPC ids (far above vanilla's range)
 class PF_RPC
 {
-	static const int SYNC_CONFIG = 714300101;	// server -> client: config
-	static const int SYNC_COUNT = 714300102;	// server -> owner client: how many trees and bushes they own (outside / inside their bases)
-	static const int SYNC_FLAGS = 714300103;	// server -> client: territory flags the player is a member of
-	static const int SHADE_INFO = 714300104;	// server -> client: shade debug text (config ShadeDebug), every 2 s
+	static const int SYNC_CONFIG = 714310101;	// server -> client: config
+	static const int SYNC_COUNT = 714310102;	// server -> owner client: how many trees and bushes they own (outside / inside their bases)
+	static const int SYNC_FLAGS = 714310103;	// server -> client: territory flags the player is a member of
+	static const int SHADE_INFO = 714310104;	// server -> client: shade debug text (config ShadeDebug), every 2 s
 }
 
 // Admin zone without planting (traders, safe zones, events): world position (Y is ignored) + radius in m
