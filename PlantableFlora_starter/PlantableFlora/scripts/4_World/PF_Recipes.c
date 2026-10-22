@@ -1,8 +1,8 @@
 // Fruit -> seeds: knife + fruit in the crafting menu ("Get seeds"). The fruit is used up, the knife loses a little health.
-// 0 to MAX_SEEDS seeds (random, user 2026-10-20), the player gets a popup with the count.
+// 0-2 seeds (same odds as the wild search, PF_WildHarvest.RollSeeds), the player gets a popup with the count.
 class PF_RecipeFruitSeeds extends RecipeBase
 {
-	static const int MAX_SEEDS = 3;
+	static const int MAX_SEEDS = 2;
 
 	string GetFruitClass() { return ""; }
 	string GetSeedClass() { return ""; }
@@ -61,11 +61,11 @@ class PF_RecipeFruitSeeds extends RecipeBase
 		}
 	}
 
-	// keep 0..MAX_SEEDS of the spawned seeds and tell the player
+	// keep 0-2 of the spawned seeds and tell the player
 	override void Do(ItemBase ingredients[], PlayerBase player, array<ItemBase> results, float specialty_weight)
 	{
 		super.Do(ingredients, player, results, specialty_weight);
-		int keep = Math.RandomIntInclusive(0, MAX_SEEDS);
+		int keep = PF_WildHarvest.RollSeeds();
 		for (int i = results.Count() - 1; i >= keep; i--)
 		{
 			if (results[i])

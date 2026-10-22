@@ -100,9 +100,9 @@ On Badlands planting holes and seedling heaps use the map's own light earth (lim
 | Source | How | Setting |
 |---|---|---|
 | Loot | Farms and villages | `types.xml` |
-| Wild bush | Cut a wild rose, hazel, hawthorn, blackthorn or elder bush with a knife/axe (vanilla action). The wild bush stays. 0-3 seeds drop: up to 3, each with the chance (popup with the count). | `WildBushSeedChance` 0.3 |
-| Wild tree | "Search for seeds" on a wild tree, bare hands. Each player can search each tree once. Forest trees give the forest seed. 0-3 seeds: up to 3, each with the chance (popup with the count). Planted trees count too once they are fully grown (players can start their own orchard). | `TreeSeedChance` 0.25 |
-| Fruit | "Search for fruit" on a wild apple/pear/plum tree (Badlands: plum, fig) gives 1-3 fruits (popup hint: "Cut it with a knife to get seeds"). Crafting "Get seeds" (knife + fruit) gives 0-3 seeds (random, popup with the count) of the tree that grows on this map. Olive and date palm have no fruit item: their wild trees give the seed directly. | `FruitSearchChance`, `FruitMaxPerSearch` |
+| Wild bush | Cut a wild rose, hazel, hawthorn, blackthorn or elder bush with a knife/axe (vanilla action). The wild bush stays. 0-2 seeds drop (popup with the count). | `SeedOneChance` 0.4, `SeedTwoChance` 0.1 |
+| Wild tree | "Search for seeds" on a wild tree, bare hands. Each player can search each tree once. Forest trees give the forest seed. 0-2 seeds (popup with the count). Planted trees count too once they are fully grown (players can start their own orchard). | `SeedOneChance` 0.4, `SeedTwoChance` 0.1 |
+| Fruit | "Search for fruit" on a wild apple/pear/plum tree (Badlands: plum, fig) gives 1-3 fruits (popup hint: "Cut it with a knife to get seeds"). Crafting "Get seeds" (knife + fruit) gives 0-2 seeds (same odds, popup with the count) of the tree that grows on this map. Olive and date palm have no fruit item: their wild trees give the seed directly. | `FruitSearchChance`, `FruitMaxPerSearch` |
 
 ### 3.2 Planting
 
@@ -334,10 +334,10 @@ To see the shade at work: put your Steam64 ID into `AdminIds`, set `ShadeDebug` 
 
 | Key | Default | What |
 |---|---|---|
-| `TreeSeedChance` | 0.25 | Per seed (up to 3) when searching a wild or grown planted tree |
+| `SeedOneChance` | 0.4 | Chance to find exactly 1 seed: searching a wild or grown planted tree, cutting a wild bush, "Get seeds" from fruit |
+| `SeedTwoChance` | 0.1 | Chance to find 2 seeds (the maximum). Nothing = the rest (default 50 %) |
 | `FruitSearchChance` | 0.5 | Per search of a wild fruit tree |
 | `FruitMaxPerSearch` | 2 | 1 + up to this many extra fruits |
-| `WildBushSeedChance` | 0.3 | Per seed (up to 3) when a wild bush is fully cut |
 
 ### 7.7 Admin and debugging (6)
 
@@ -392,8 +392,8 @@ Slow growth, fewer seeds.
 
 ```json
 "TreeGrowSeconds": 86400,
-"TreeSeedChance": 0.1,
-"WildBushSeedChance": 0.15,
+"SeedOneChance": 0.2,
+"SeedTwoChance": 0.05,
 "MaxTreesPerPlayer": 5
 ```
 

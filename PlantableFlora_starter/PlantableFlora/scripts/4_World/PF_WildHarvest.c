@@ -52,18 +52,15 @@ class PF_WildHarvest
 		s_Searched.Set(key, true);
 
 		PF_Config cfg = PF_Config.Get();
-		float chance = cfg.TreeSeedChance;
-		if (fruitClass != "")
-			chance = cfg.FruitSearchChance;
 		// planted trees bear like wild ones once they are mature (user 2026-10-20; before: never anything);
 		// seedling and middle stage have nothing yet
 		bool bears = !planted || planted.GetNextStageConfig() == "";
-		// seeds: up to MAX_SEEDS, each with the chance (0-3, user 2026-10-20); fruit: the chance, then 1 + up to FruitMaxPerSearch
+		// seeds: 0-2 (RollSeeds); fruit: the chance, then 1 + up to FruitMaxPerSearch
 		int count = 0;
-		if (bears && fruitClass != "" && Math.RandomFloat01() < chance)
+		if (bears && fruitClass != "" && Math.RandomFloat01() < cfg.FruitSearchChance)
 			count = 1 + Math.RandomInt(0, cfg.FruitMaxPerSearch);
 		else if (bears && fruitClass == "")
-			count = RollSeeds(chance);
+			count = RollSeeds();
 		bool found = count > 0;
 		PF_Log.Debug("tree search: " + tree.GetShapeName() + " item=" + itemClass + " found=" + found);
 		if (!found)
@@ -86,18 +83,18 @@ class PF_WildHarvest
 			PF_Notify.Send(player, FoundSeedsText(count, itemName));
 	}
 
-	static const int MAX_SEEDS = 3;
+	static const int MAX_SEEDS = 2;
 
-	// number of seeds: MAX_SEEDS rolls with the chance (config TreeSeedChance / WildBushSeedChance)
-	static int RollSeeds(float chance)
+	// number of seeds, 0-2 (user 2026-10-22: none 50 %, 1 seed 40 %, 2 seeds 10 %; config SeedOneChance / SeedTwoChance)
+	static int RollSeeds()
 	{
-		int count = 0;
-		for (int i = 0; i < MAX_SEEDS; i++)
-		{
-			if (Math.RandomFloat01() < chance)
-				count++;
-		}
-		return count;
+		PF_Config cfg = PF_Config.Get();
+		float roll = Math.RandomFloat01();
+		if (roll < cfg.SeedTwoChance)
+			return 2;
+		if (roll < cfg.SeedTwoChance + cfg.SeedOneChance)
+			return 1;
+		return 0;
 	}
 
 	// "You found 2 seeds (Tree Seed)"
@@ -129,7 +126,7 @@ class PF_WildHarvest
 		if (seedClass == "")
 			return;
 
-		int count = RollSeeds(PF_Config.Get().WildBushSeedChance);
+		int count = RollSeeds();
 		if (count == 0)
 			return;
 

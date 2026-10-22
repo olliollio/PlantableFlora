@@ -3,14 +3,21 @@
 Format follows [Keep a Changelog](https://keepachangelog.com/). The version is `version` in `release/mod.cpp`.
 Config changes: new keys are added to an existing `config.json` automatically, existing values stay.
 
-## [0.2.0] - unreleased
+## [0.2.0] - 2026-10-22
 
 ### Added
 - **Real shade on Badlands.** Vanilla Badlands adds sun heat to players in the open (up to +8 °C at noon, +9.6 °C without a hat) but never counted trees as shade. Now the crown of any tree, wild or planted, is shade: no sun heat underneath. The shade follows the sun (under the crown at noon, away from the sun in the morning and evening). Other maps have no sun heat and are not affected. Off with `TreeShade` false.
 - Shade overlay for admins: `ShadeDebug` + `AdminIds` (Steam64 IDs). Shows bottom left whether you stand in tree shade and how much sun heat it removes; Numpad 9 shows/hides it.
 
+### Changed
+- Fewer seeds: searching a tree, cutting a wild bush and "Get seeds" from fruit now give 0-2 seeds (nothing 50 %, 1 seed 40 %, 2 seeds 10 %) instead of 0-3. The same odds for all three.
+
+### Fixed
+- Conflict with ScopeGlint: both mods used the same network message ids, so with both installed one mod could swallow the other's messages (e.g. seedlings not showing or growing). PlantableFlora now uses its own ids.
+
 ### Config
-- New keys: `TreeShade` (true), `ShadeDebug` (false), `AdminIds` ([]). Added to an existing `config.json` automatically.
+- New keys: `TreeShade` (true), `ShadeDebug` (false), `AdminIds` ([]), `SeedOneChance` (0.4), `SeedTwoChance` (0.1). Added to an existing `config.json` automatically.
+- Removed: `TreeSeedChance`, `WildBushSeedChance` (replaced by `SeedOneChance` / `SeedTwoChance`). If you had changed them, set the new keys instead.
 
 ## [0.1.0] - 2026-10-20
 

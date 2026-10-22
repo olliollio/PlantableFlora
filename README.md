@@ -9,7 +9,7 @@ Players dig a planting hole, water it and plant tree and bush seeds they find in
 
 ## What it does
 
-- **Seeds** come from loot, from searching wild trees ("Search for seeds", 0-3 seeds), from cutting wild bushes and from fruit ("Get seeds" with a knife). Grown planted trees give seeds and fruit too.
+- **Seeds** come from loot, from searching wild trees ("Search for seeds", 0-2 seeds), from cutting wild bushes and from fruit ("Get seeds" with a knife). Grown planted trees give seeds and fruit too.
 - **Planting** needs a hole dug with a shovel (60 cm soil heap) and water; fertilizer (garden lime, plant material) makes plants grow faster. An empty vanilla garden plot works too.
 - **Growth:** seedling → young → full-grown, real time (default: bushes 1 h, trees 12 h). Fully grown trees can be felled (logs, sticks, stump), bushes cut (sticks, they grow back) or dug up.
 - **Maps:** Chernarus and Livonia (16 trees + forest variants, 6 bushes), Badlands with its own species (fig, Turkish pine, olive, date palm, poplar, ash, plum; oleander, fig bush, prickly pear, cycas, Syrian rue) and its own soil look: cover, wood and fruit where almost nothing grows. Seeds only grow on their own map. Frostline works with the Chernarus species.

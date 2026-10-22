@@ -85,10 +85,10 @@ class PF_Config
 	int MaxBushesPerBase = 15;
 
 	// seeds
-	float TreeSeedChance = 0.25;		// chance per seed when searching a wild or grown planted tree, up to 3 seeds (0-3); each player can search each tree once
+	float SeedOneChance = 0.4;		// chance to find exactly 1 seed: wild or grown planted tree search (each player can search each tree once), wild bush cut, "Get seeds" from fruit
+	float SeedTwoChance = 0.1;		// chance to find 2 seeds (the maximum); nothing = the rest (default 50 %)
 	float FruitSearchChance = 0.5;		// chance per search of a wild apple/pear/plum tree
 	int FruitMaxPerSearch = 2;		// 1 + up to this many extra fruits
-	float WildBushSeedChance = 0.3;	// chance per seed when a wild bush is fully cut, up to 3 seeds (0-3)
 
 	// world
 	bool TreeShade = true;			// a player under a tree crown (wild or planted) is in the shade: no vanilla sun heat (only Badlands has it, up to +9.6 °C at noon); false = vanilla (trees cast no shade)
