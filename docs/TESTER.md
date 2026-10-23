@@ -36,6 +36,14 @@ Shovel in hands, look at the ground, "Dig planting hole".
 
 If the spot isn't allowed, the prompt tells you why (road too close, house too close, …).
 
+**Winter maps (Frostline, Namalsk, Winter Chernarus): frozen ground.** Snow ground is frozen, you can't dig or plant there ("Frozen ground: make a fire here first"). To thaw it:
+
+1. Build a fireplace or fire barrel on the snow and light it. Feed it so it burns properly (the vanilla melt patch under the fire grows).
+2. After 5 minutes of hot fire the ground within **2 m** of the fire is thawed. You don't have to put the fire out.
+3. Dig holes and plant within 2 m of the fire. The ground stays thawed for 30 minutes after the fire goes out. A hole you already dug stays usable.
+
+On Frostline the brown grass is not frozen, you can plant there without a fire. A server restart freezes thawed ground again (dug holes stay).
+
 ### 2.3 Water (required) and fertilize (optional)
 
 - Garden lime or compost in hands → look at the mound → "Fertilize".
@@ -130,6 +138,16 @@ Planted trees and bushes must not be recognizable. Look for anything that gives 
 2. Same under a fully grown planted tree: cooler too. Under a seedling or young sapling: no change.
 3. In the morning or evening: the shade is on the side away from the sun, not all around the tree. Standing under the crown edge on the sun side should not cool you.
 4. Does it feel right? Too strong, too weak, too slow to kick in?
+
+### 3.9 Winter maps (Frostline, Namalsk, Winter Chernarus)
+
+1. On snow without a fire: the seed preview says "Frozen ground: make a fire here first", and a shovel in hands offers no "Dig planting hole".
+2. Light a fire on the snow and keep it burning. About 5 minutes later you should be able to dig a hole within 2 m of the fire. 3 m away: still frozen.
+3. Put the fire out: the spot should stay plantable for about 30 minutes, then freeze again.
+4. Frostline: plant a spruce or birch next to snowy wild trees. It should grow into the snowy version (next to frozen spruces: the frozen one). An oak there should be refused, "Too cold here".
+5. Frostline brown grass: planting works without a fire, like before.
+6. Namalsk and Winter Chernarus are not tested at all yet: does thawing work there, and is the right ground frozen?
+7. Is 5 minutes of fire too long or too short? Is 2 m around the fire enough?
 
 ---
 

@@ -108,6 +108,8 @@ On Badlands planting holes and seedling heaps use the map's own light earth (lim
 
 ### 3.2 Planting
 
+**Winter maps (Frostline, Namalsk, Winter Chernarus):** snow ground is frozen. Thaw it first: keep a fireplace or fire barrel burning hot for 5 minutes, then dig and plant within 2 m of it (details in 3.6). Without that the seed preview says "Frozen ground: make a fire here first".
+
 1. **Dig a planting hole.** Hold a digging tool and use "Dig planting hole" on the ground. Digging tools: shovel, field shovel, farming hoe (everything vanilla lets you dig a garden plot with). All placement rules (section 4) are checked here.
 2. **Water the hole** (required by default) **and optionally fertilize it.** A container with at least 500 ml of water → "Water". Garden lime or plant material (compost) in hands → "Fertilize". Rain also waters a hole: after `RainWaterMinutes` (10) of rain it counts as watered. Without water the seed can't be planted ("Needs water first"); `RequireWater` switches that off. `RequireFertilizer` makes fertilizer required for **trees** (bushes only ever need water). Fertilizer makes every growth step faster: garden lime 30 %, plant material 15 % (water gives no bonus by default, `WaterBonus`).
 3. **Plant.** The seed preview snaps to the hole, "Plant" uses up the hole; the seedling stands on its soil heap.
