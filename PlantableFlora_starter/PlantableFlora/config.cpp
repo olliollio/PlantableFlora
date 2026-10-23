@@ -2,7 +2,7 @@ class CfgPatches
 {
 	class PlantableFlora
 	{
-		units[] = { "PF_Bush_Rose", "PF_Bush_Hazel", "PF_Bush_Rose_Young", "PF_Bush_Rose_Seedling", "PF_Bush_Hazel_Young", "PF_Bush_Hazel_Seedling", "PF_Bush_Rose_Cut", "PF_Bush_Hazel_Cut", "PF_Seed_Rose", "PF_Seed_Hazel", "PF_Seed_Hawthorn", "PF_Bush_Hawthorn", "PF_Bush_Hawthorn_Young", "PF_Bush_Hawthorn_Seedling", "PF_Bush_Hawthorn_Cut", "PF_Seed_Blackthorn", "PF_Bush_Blackthorn", "PF_Bush_Blackthorn_Young", "PF_Bush_Blackthorn_Seedling", "PF_Bush_Blackthorn_Cut", "PF_Seed_Elder", "PF_Bush_Elder", "PF_Bush_Elder_Young", "PF_Bush_Elder_Seedling", "PF_Bush_Elder_Cut", "PF_Seed_DwarfBirch", "PF_Bush_DwarfBirch", "PF_Bush_DwarfBirch_Young", "PF_Bush_DwarfBirch_Seedling", "PF_Bush_DwarfBirch_Cut", "PF_Seed_Spruce", "PF_Tree_Spruce_Young", "PF_Tree_Spruce_Medium", "PF_Tree_Spruce", "PF_Tree_Spruce_Stump", "PF_Seed_Oak", "PF_Tree_Oak_Young", "PF_Tree_Oak_Medium", "PF_Tree_Oak", "PF_Tree_Oak_Stump", "PF_Seed_Pine", "PF_Tree_Pine_Young", "PF_Tree_Pine_Medium", "PF_Tree_Pine", "PF_Tree_Pine_Stump", "PF_Seed_Beech", "PF_Tree_Beech_Young", "PF_Tree_Beech_Medium", "PF_Tree_Beech", "PF_Tree_Beech_Stump", "PF_Seed_Birch", "PF_Tree_Birch_Young", "PF_Tree_Birch_Medium", "PF_Tree_Birch", "PF_Seed_Larch", "PF_Tree_Larch_Young", "PF_Tree_Larch_Medium", "PF_Tree_Larch", "PF_Seed_Ash", "PF_Tree_Ash_Young", "PF_Tree_Ash_Medium", "PF_Tree_Ash", "PF_Seed_Walnut", "PF_Tree_Walnut_Young", "PF_Tree_Walnut_Medium", "PF_Tree_Walnut", "PF_Seed_Hornbeam", "PF_Tree_Hornbeam_Young", "PF_Tree_Hornbeam_Medium", "PF_Tree_Hornbeam", "PF_Seed_WhitePoplar", "PF_Tree_WhitePoplar_Young", "PF_Tree_WhitePoplar_Medium", "PF_Tree_WhitePoplar", "PF_Seed_Willow", "PF_Tree_Willow_Young", "PF_Tree_Willow_Medium", "PF_Tree_Willow", "PF_Seed_Rowan", "PF_Tree_Rowan_Young", "PF_Tree_Rowan_Medium", "PF_Tree_Rowan", "PF_Seed_Acacia", "PF_Tree_Acacia_Young", "PF_Tree_Acacia_Medium", "PF_Tree_Acacia", "PF_Seed_Apple", "PF_Tree_Apple_Young", "PF_Tree_Apple_Medium", "PF_Tree_Apple", "PF_Seed_Pear", "PF_Tree_Pear_Young", "PF_Tree_Pear_Medium", "PF_Tree_Pear", "PF_Seed_Plum", "PF_Tree_Plum_Young", "PF_Tree_Plum_Medium", "PF_Tree_Plum", "PF_Seed_SpruceForest", "PF_Tree_SpruceForest_Young", "PF_Tree_SpruceForest_Medium", "PF_Tree_SpruceForest", "PF_Tree_SpruceForest_Stump", "PF_Seed_OakForest", "PF_Tree_OakForest_Young", "PF_Tree_OakForest_Medium", "PF_Tree_OakForest", "PF_Tree_OakForest_Stump", "PF_Seed_PineForest", "PF_Tree_PineForest_Young", "PF_Tree_PineForest_Medium", "PF_Tree_PineForest", "PF_Tree_PineForest_Stump", "PF_Seed_BeechForest", "PF_Tree_BeechForest_Young", "PF_Tree_BeechForest_Medium", "PF_Tree_BeechForest", "PF_Tree_BeechForest_Stump", "PF_Seed_BirchForest", "PF_Tree_BirchForest_Young", "PF_Tree_BirchForest_Medium", "PF_Tree_BirchForest", "PF_Seed_LarchForest", "PF_Tree_LarchForest_Young", "PF_Tree_LarchForest_Medium", "PF_Tree_LarchForest", "PF_Seed_AcaciaForest", "PF_Tree_AcaciaForest_Young", "PF_Tree_AcaciaForest_Medium", "PF_Tree_AcaciaForest", "PF_Seed_Fig", "PF_Tree_Fig_Young", "PF_Tree_Fig_Medium", "PF_Tree_Fig", "PF_Seed_TurkishPine", "PF_Tree_TurkishPine_Young", "PF_Tree_TurkishPine_Medium", "PF_Tree_TurkishPine", "PF_Tree_TurkishPine_Stump", "PF_Seed_Olive", "PF_Tree_Olive_Young", "PF_Tree_Olive_Medium", "PF_Tree_Olive", "PF_Seed_DatePalm", "PF_Tree_DatePalm_Young", "PF_Tree_DatePalm_Medium", "PF_Tree_DatePalm", "PF_Seed_Poplar", "PF_Tree_Poplar_Young", "PF_Tree_Poplar_Medium", "PF_Tree_Poplar", "PF_Seed_BadlandsAsh", "PF_Tree_BadlandsAsh_Young", "PF_Tree_BadlandsAsh_Medium", "PF_Tree_BadlandsAsh", "PF_Seed_BadlandsPlum", "PF_Tree_BadlandsPlum_Young", "PF_Tree_BadlandsPlum_Medium", "PF_Tree_BadlandsPlum", "PF_Seed_Oleander", "PF_Bush_Oleander_Seedling", "PF_Bush_Oleander_Young", "PF_Bush_Oleander", "PF_Bush_Oleander_Cut", "PF_Seed_FigBush", "PF_Bush_FigBush_Seedling", "PF_Bush_FigBush_Young", "PF_Bush_FigBush", "PF_Bush_FigBush_Cut", "PF_Seed_PricklyPear", "PF_Bush_PricklyPear_Seedling", "PF_Bush_PricklyPear_Young", "PF_Bush_PricklyPear", "PF_Bush_PricklyPear_Cut", "PF_Seed_Cycas", "PF_Bush_Cycas_Seedling", "PF_Bush_Cycas_Young", "PF_Bush_Cycas", "PF_Bush_Cycas_Cut", "PF_Seed_SyrianRue", "PF_Bush_SyrianRue_Seedling", "PF_Bush_SyrianRue_Young", "PF_Bush_SyrianRue", "PF_Bush_SyrianRue_Cut" };
+		units[] = { "PF_Bush_Rose", "PF_Bush_Hazel", "PF_Bush_Rose_Young", "PF_Bush_Rose_Seedling", "PF_Bush_Hazel_Young", "PF_Bush_Hazel_Seedling", "PF_Bush_Rose_Cut", "PF_Bush_Hazel_Cut", "PF_Seed_Rose", "PF_Seed_Hazel", "PF_Seed_Hawthorn", "PF_Bush_Hawthorn", "PF_Bush_Hawthorn_Young", "PF_Bush_Hawthorn_Seedling", "PF_Bush_Hawthorn_Cut", "PF_Seed_Blackthorn", "PF_Bush_Blackthorn", "PF_Bush_Blackthorn_Young", "PF_Bush_Blackthorn_Seedling", "PF_Bush_Blackthorn_Cut", "PF_Seed_Elder", "PF_Bush_Elder", "PF_Bush_Elder_Young", "PF_Bush_Elder_Seedling", "PF_Bush_Elder_Cut", "PF_Seed_DwarfBirch", "PF_Bush_DwarfBirch", "PF_Bush_DwarfBirch_Young", "PF_Bush_DwarfBirch_Seedling", "PF_Bush_DwarfBirch_Cut", "PF_Bush_DwarfBirchWinter", "PF_Bush_DwarfBirchWinter_Young", "PF_Bush_DwarfBirchWinter_Seedling", "PF_Bush_DwarfBirchWinter_Cut", "PF_Seed_Spruce", "PF_Tree_Spruce_Young", "PF_Tree_Spruce_Medium", "PF_Tree_Spruce", "PF_Tree_Spruce_Stump", "PF_Seed_Oak", "PF_Tree_Oak_Young", "PF_Tree_Oak_Medium", "PF_Tree_Oak", "PF_Tree_Oak_Stump", "PF_Seed_Pine", "PF_Tree_Pine_Young", "PF_Tree_Pine_Medium", "PF_Tree_Pine", "PF_Tree_Pine_Stump", "PF_Seed_Beech", "PF_Tree_Beech_Young", "PF_Tree_Beech_Medium", "PF_Tree_Beech", "PF_Tree_Beech_Stump", "PF_Seed_Birch", "PF_Tree_Birch_Young", "PF_Tree_Birch_Medium", "PF_Tree_Birch", "PF_Seed_Larch", "PF_Tree_Larch_Young", "PF_Tree_Larch_Medium", "PF_Tree_Larch", "PF_Seed_Ash", "PF_Tree_Ash_Young", "PF_Tree_Ash_Medium", "PF_Tree_Ash", "PF_Seed_Walnut", "PF_Tree_Walnut_Young", "PF_Tree_Walnut_Medium", "PF_Tree_Walnut", "PF_Seed_Hornbeam", "PF_Tree_Hornbeam_Young", "PF_Tree_Hornbeam_Medium", "PF_Tree_Hornbeam", "PF_Seed_WhitePoplar", "PF_Tree_WhitePoplar_Young", "PF_Tree_WhitePoplar_Medium", "PF_Tree_WhitePoplar", "PF_Seed_BlackPoplar", "PF_Tree_BlackPoplar_Young", "PF_Tree_BlackPoplar_Medium", "PF_Tree_BlackPoplar", "PF_Seed_Willow", "PF_Tree_Willow_Young", "PF_Tree_Willow_Medium", "PF_Tree_Willow", "PF_Seed_Rowan", "PF_Tree_Rowan_Young", "PF_Tree_Rowan_Medium", "PF_Tree_Rowan", "PF_Seed_Acacia", "PF_Tree_Acacia_Young", "PF_Tree_Acacia_Medium", "PF_Tree_Acacia", "PF_Seed_Apple", "PF_Tree_Apple_Young", "PF_Tree_Apple_Medium", "PF_Tree_Apple", "PF_Seed_Pear", "PF_Tree_Pear_Young", "PF_Tree_Pear_Medium", "PF_Tree_Pear", "PF_Seed_Plum", "PF_Tree_Plum_Young", "PF_Tree_Plum_Medium", "PF_Tree_Plum", "PF_Seed_SpruceForest", "PF_Tree_SpruceForest_Young", "PF_Tree_SpruceForest_Medium", "PF_Tree_SpruceForest", "PF_Tree_SpruceForest_Stump", "PF_Seed_OakForest", "PF_Tree_OakForest_Young", "PF_Tree_OakForest_Medium", "PF_Tree_OakForest", "PF_Tree_OakForest_Stump", "PF_Seed_PineForest", "PF_Tree_PineForest_Young", "PF_Tree_PineForest_Medium", "PF_Tree_PineForest", "PF_Tree_PineForest_Stump", "PF_Seed_BeechForest", "PF_Tree_BeechForest_Young", "PF_Tree_BeechForest_Medium", "PF_Tree_BeechForest", "PF_Tree_BeechForest_Stump", "PF_Seed_BirchForest", "PF_Tree_BirchForest_Young", "PF_Tree_BirchForest_Medium", "PF_Tree_BirchForest", "PF_Seed_LarchForest", "PF_Tree_LarchForest_Young", "PF_Tree_LarchForest_Medium", "PF_Tree_LarchForest", "PF_Seed_AcaciaForest", "PF_Tree_AcaciaForest_Young", "PF_Tree_AcaciaForest_Medium", "PF_Tree_AcaciaForest", "PF_Tree_SpruceWinter_Young", "PF_Tree_SpruceWinter_Medium", "PF_Tree_SpruceWinter", "PF_Tree_SpruceWinter_Stump", "PF_Tree_SpruceFrozen_Young", "PF_Tree_SpruceFrozen_Medium", "PF_Tree_SpruceFrozen", "PF_Tree_SpruceFrozen_Stump", "PF_Tree_SpruceForestWinter_Young", "PF_Tree_SpruceForestWinter_Medium", "PF_Tree_SpruceForestWinter", "PF_Tree_SpruceForestWinter_Stump", "PF_Tree_SpruceForestFrozen_Young", "PF_Tree_SpruceForestFrozen_Medium", "PF_Tree_SpruceForestFrozen", "PF_Tree_SpruceForestFrozen_Stump", "PF_Tree_BirchWinter_Young", "PF_Tree_BirchWinter_Medium", "PF_Tree_BirchWinter", "PF_Tree_BirchForestWinter_Young", "PF_Tree_BirchForestWinter_Medium", "PF_Tree_BirchForestWinter", "PF_Seed_Fig", "PF_Tree_Fig_Young", "PF_Tree_Fig_Medium", "PF_Tree_Fig", "PF_Seed_TurkishPine", "PF_Tree_TurkishPine_Young", "PF_Tree_TurkishPine_Medium", "PF_Tree_TurkishPine", "PF_Tree_TurkishPine_Stump", "PF_Seed_Olive", "PF_Tree_Olive_Young", "PF_Tree_Olive_Medium", "PF_Tree_Olive", "PF_Seed_DatePalm", "PF_Tree_DatePalm_Young", "PF_Tree_DatePalm_Medium", "PF_Tree_DatePalm", "PF_Seed_Poplar", "PF_Tree_Poplar_Young", "PF_Tree_Poplar_Medium", "PF_Tree_Poplar", "PF_Seed_BadlandsAsh", "PF_Tree_BadlandsAsh_Young", "PF_Tree_BadlandsAsh_Medium", "PF_Tree_BadlandsAsh", "PF_Seed_BadlandsPlum", "PF_Tree_BadlandsPlum_Young", "PF_Tree_BadlandsPlum_Medium", "PF_Tree_BadlandsPlum", "PF_Seed_Oleander", "PF_Bush_Oleander_Seedling", "PF_Bush_Oleander_Young", "PF_Bush_Oleander", "PF_Bush_Oleander_Cut", "PF_Seed_FigBush", "PF_Bush_FigBush_Seedling", "PF_Bush_FigBush_Young", "PF_Bush_FigBush", "PF_Bush_FigBush_Cut", "PF_Seed_PricklyPear", "PF_Bush_PricklyPear_Seedling", "PF_Bush_PricklyPear_Young", "PF_Bush_PricklyPear", "PF_Bush_PricklyPear_Cut", "PF_Seed_Cycas", "PF_Bush_Cycas_Seedling", "PF_Bush_Cycas_Young", "PF_Bush_Cycas", "PF_Bush_Cycas_Cut", "PF_Seed_SyrianRue", "PF_Bush_SyrianRue_Seedling", "PF_Bush_SyrianRue_Young", "PF_Bush_SyrianRue", "PF_Bush_SyrianRue_Cut" };
 		weapons[] = {};
 		requiredVersion = 0.1;
 		requiredAddons[] = { "DZ_Data", "DZ_Scripts", "DZ_Plants", "DZ_Gear_Cultivation" };
@@ -318,6 +318,39 @@ class CfgVehicles
 		storageCategory = 10;
 		pf_isProjection = 1;
 	};
+	// snowy dwarf birch (Sakhal model): planted by PF_Seed_DwarfBirch where PF_Climate finds snowy or frozen wild trees
+	class PF_Bush_DwarfBirchWinter: PF_Bush_Base
+	{
+		scope = 2;
+		displayName = "Planted Dwarf Birch (snowy)";
+		model = "DZ\plants_sakhal\winter\b_betulahumilis_1s_winter.p3d";
+		pf_groundOffset = 0.859;
+		pf_cutClass = "PF_Bush_DwarfBirchWinter_Cut";
+	};
+	class PF_Bush_DwarfBirchWinter_Young: PF_Bush_Base
+	{
+		scope = 2;
+		displayName = "Young Dwarf Birch (snowy)";
+		model = "DZ\plants_sakhal\winter\b_betulahumilis_1s_winter.p3d";
+		pf_groundOffset = 0.859;
+		pf_nextStage = "PF_Bush_DwarfBirchWinter";
+		pf_kind = "bushStep";
+	};
+	class PF_Bush_DwarfBirchWinter_Seedling: PF_Seedling
+	{
+		scope = 2;
+		displayName = "Seedling Dwarf Birch (snowy)";
+		pf_nextStage = "PF_Bush_DwarfBirchWinter_Young";
+		pf_kind = "bushStep";
+	};
+	class PF_Bush_DwarfBirchWinter_Cut: PF_Bush_Base
+	{
+		scope = 2;
+		displayName = "Cut Dwarf Birch (placeholder)";
+		model = "DZ\gear\cultivation\clutter_cutter_2m_x_2m.p3d";
+		pf_nextStage = "PF_Bush_DwarfBirchWinter";
+		pf_kind = "bushRegrow";
+	};
 
 	// Trees: generated by tools/gen_species.py (young -> mature -> stump, no regrow). Do not edit between the markers.
 	// <<GEN TREES BEGIN>>
@@ -386,6 +419,7 @@ class CfgVehicles
 		displayName = "Planted Oak";
 		model = "DZ\plants\tree\t_quercusrobur_2sc.p3d";
 		pf_groundOffset = 7.669;
+		pf_trunk[] = {0.30, -0.07};
 		pf_fellClass = "PF_Tree_Oak_Stump";
 		pf_isTree = 1;
 	};
@@ -427,6 +461,7 @@ class CfgVehicles
 		displayName = "Planted Pine";
 		model = "DZ\plants\tree\t_pinussylvestris_2s.p3d";
 		pf_groundOffset = 7.528;
+		pf_trunk[] = {0.11, 0.02};
 		pf_fellClass = "PF_Tree_Pine_Stump";
 		pf_isTree = 1;
 	};
@@ -458,6 +493,7 @@ class CfgVehicles
 		displayName = "Growing Beech";
 		model = "DZ\plants\tree\t_fagussylvatica_1s.p3d";
 		pf_groundOffset = 3.209;
+		pf_trunk[] = {0.06, -0.17};
 		pf_nextStage = "PF_Tree_Beech";
 		pf_kind = "treeStep";
 		pf_isTree = 1;
@@ -468,6 +504,7 @@ class CfgVehicles
 		displayName = "Planted Beech";
 		model = "DZ\plants\tree\t_fagussylvatica_2s.p3d";
 		pf_groundOffset = 6.962;
+		pf_trunk[] = {0.60, -0.10};
 		pf_fellClass = "PF_Tree_Beech_Stump";
 		pf_isTree = 1;
 	};
@@ -509,6 +546,7 @@ class CfgVehicles
 		displayName = "Planted Birch";
 		model = "DZ\plants\tree\t_betulapendula_2s.p3d";
 		pf_groundOffset = 6.495;
+		pf_trunk[] = {0.21, 0.67};
 		pf_fellClass = "none";
 		pf_isTree = 1;
 	};
@@ -544,6 +582,7 @@ class CfgVehicles
 		displayName = "Planted Larch";
 		model = "DZ\plants\tree\t_larixdecidua_2s.p3d";
 		pf_groundOffset = 5.236;
+		pf_trunk[] = {0.05, 0.53};
 		pf_fellClass = "none";
 		pf_isTree = 1;
 	};
@@ -579,6 +618,7 @@ class CfgVehicles
 		displayName = "Planted Ash";
 		model = "DZ\plants\tree\t_fraxinusexcelsior_2s.p3d";
 		pf_groundOffset = 9.195;
+		pf_trunk[] = {0.14, -0.43};
 		pf_fellClass = "none";
 		pf_isTree = 1;
 	};
@@ -614,6 +654,7 @@ class CfgVehicles
 		displayName = "Planted Walnut";
 		model = "DZ\plants\tree\t_juglansregia_2s.p3d";
 		pf_groundOffset = 6.526;
+		pf_trunk[] = {-0.51, -0.56};
 		pf_fellClass = "none";
 		pf_isTree = 1;
 	};
@@ -649,6 +690,7 @@ class CfgVehicles
 		displayName = "Planted Hornbeam";
 		model = "DZ\plants\tree\t_carpinus_2s.p3d";
 		pf_groundOffset = 6.831;
+		pf_trunk[] = {-1.26, -0.13};
 		pf_fellClass = "none";
 		pf_isTree = 1;
 	};
@@ -684,10 +726,47 @@ class CfgVehicles
 		displayName = "Planted White Poplar";
 		model = "DZ\plants\tree\t_populusalba_2s.p3d";
 		pf_groundOffset = 7.233;
+		pf_trunk[] = {-0.42, 0.04};
 		pf_fellClass = "none";
 		pf_isTree = 1;
 	};
 	class PF_Tree_WhitePoplar_Placing: PF_Tree_WhitePoplar_Young
+	{
+		scope = 1;
+		displayName = "This is a hologram";
+		descriptionShort = "Nothing to see here, move along";
+		storageCategory = 10;
+		pf_isProjection = 1;
+	};
+	class PF_Tree_BlackPoplar_Young: PF_Seedling
+	{
+		scope = 2;
+		displayName = "Young Black Poplar";
+		pf_nextStage = "PF_Tree_BlackPoplar_Medium";
+		pf_kind = "treeStep";
+		pf_isTree = 1;
+	};
+	class PF_Tree_BlackPoplar_Medium: PF_Bush_Base
+	{
+		scope = 2;
+		displayName = "Growing Black Poplar";
+		model = "DZ\plants\tree\b_fagussylvatica_1f.p3d";
+		pf_groundOffset = 1.421;
+		pf_nextStage = "PF_Tree_BlackPoplar";
+		pf_kind = "treeStep";
+		pf_isTree = 1;
+	};
+	class PF_Tree_BlackPoplar: PF_Bush_Base
+	{
+		scope = 2;
+		displayName = "Planted Black Poplar";
+		model = "DZ\plants\tree\t_populusnigra_3s.p3d";
+		pf_groundOffset = 11.112;
+		pf_trunk[] = {0.22, 0.22};
+		pf_fellClass = "none";
+		pf_isTree = 1;
+	};
+	class PF_Tree_BlackPoplar_Placing: PF_Tree_BlackPoplar_Young
 	{
 		scope = 1;
 		displayName = "This is a hologram";
@@ -719,6 +798,7 @@ class CfgVehicles
 		displayName = "Planted Willow";
 		model = "DZ\plants\tree\t_salixalba_2sb.p3d";
 		pf_groundOffset = 5.782;
+		pf_trunk[] = {0.25, 0.63};
 		pf_fellClass = "none";
 		pf_isTree = 1;
 	};
@@ -754,6 +834,7 @@ class CfgVehicles
 		displayName = "Planted Rowan";
 		model = "DZ\plants\tree\t_sorbus_2s.p3d";
 		pf_groundOffset = 6.933;
+		pf_trunk[] = {0.38, -0.63};
 		pf_fellClass = "none";
 		pf_isTree = 1;
 	};
@@ -789,6 +870,7 @@ class CfgVehicles
 		displayName = "Planted Acacia";
 		model = "DZ\plants\tree\t_robiniapseudoacacia_2s.p3d";
 		pf_groundOffset = 9.051;
+		pf_trunk[] = {0.26, -0.77};
 		pf_fellClass = "none";
 		pf_isTree = 1;
 	};
@@ -824,6 +906,7 @@ class CfgVehicles
 		displayName = "Planted Apple";
 		model = "DZ\plants\tree\t_malusdomestica_2s.p3d";
 		pf_groundOffset = 3.802;
+		pf_trunk[] = {0.04, -0.11};
 		pf_fellClass = "none";
 		pf_isTree = 1;
 	};
@@ -894,6 +977,7 @@ class CfgVehicles
 		displayName = "Planted Plum";
 		model = "DZ\plants\tree\t_prunusdomestica_2s.p3d";
 		pf_groundOffset = 4.302;
+		pf_trunk[] = {0.06, 0.12};
 		pf_fellClass = "none";
 		pf_isTree = 1;
 	};
@@ -929,6 +1013,7 @@ class CfgVehicles
 		displayName = "Planted Spruce (forest)";
 		model = "DZ\plants\tree\t_piceaabies_2f.p3d";
 		pf_groundOffset = 10.080;
+		pf_trunk[] = {0.07, 0.19};
 		pf_fellClass = "PF_Tree_SpruceForest_Stump";
 		pf_isTree = 1;
 	};
@@ -960,6 +1045,7 @@ class CfgVehicles
 		displayName = "Growing Oak (forest)";
 		model = "DZ\plants\tree\t_quercusrobur_1f.p3d";
 		pf_groundOffset = 4.912;
+		pf_trunk[] = {-1.43, 1.53};
 		pf_nextStage = "PF_Tree_OakForest";
 		pf_kind = "treeStep";
 		pf_isTree = 1;
@@ -968,8 +1054,9 @@ class CfgVehicles
 	{
 		scope = 2;
 		displayName = "Planted Oak (forest)";
-		model = "DZ\plants\tree\t_quercusrobur_2fc.p3d";
-		pf_groundOffset = 8.360;
+		model = "DZ\plants\tree\t_quercusrobur_2f.p3d";
+		pf_groundOffset = 9.972;
+		pf_trunk[] = {0.92, 0.43};
 		pf_fellClass = "PF_Tree_OakForest_Stump";
 		pf_isTree = 1;
 	};
@@ -1011,6 +1098,7 @@ class CfgVehicles
 		displayName = "Planted Pine (forest)";
 		model = "DZ\plants\tree\t_pinussylvestris_2f.p3d";
 		pf_groundOffset = 8.413;
+		pf_trunk[] = {0.10, 0.27};
 		pf_fellClass = "PF_Tree_PineForest_Stump";
 		pf_isTree = 1;
 	};
@@ -1042,6 +1130,7 @@ class CfgVehicles
 		displayName = "Growing Beech (forest)";
 		model = "DZ\plants\tree\t_fagussylvatica_1f.p3d";
 		pf_groundOffset = 7.857;
+		pf_trunk[] = {0.10, -0.30};
 		pf_nextStage = "PF_Tree_BeechForest";
 		pf_kind = "treeStep";
 		pf_isTree = 1;
@@ -1052,6 +1141,7 @@ class CfgVehicles
 		displayName = "Planted Beech (forest)";
 		model = "DZ\plants\tree\t_fagussylvatica_1fe.p3d";
 		pf_groundOffset = 8.213;
+		pf_trunk[] = {0.45, 0.42};
 		pf_fellClass = "PF_Tree_BeechForest_Stump";
 		pf_isTree = 1;
 	};
@@ -1083,6 +1173,7 @@ class CfgVehicles
 		displayName = "Growing Birch (forest)";
 		model = "DZ\plants\tree\t_betulapendula_1f.p3d";
 		pf_groundOffset = 4.958;
+		pf_trunk[] = {0.19, 0.00};
 		pf_nextStage = "PF_Tree_BirchForest";
 		pf_kind = "treeStep";
 		pf_isTree = 1;
@@ -1093,6 +1184,7 @@ class CfgVehicles
 		displayName = "Planted Birch (forest)";
 		model = "DZ\plants\tree\t_betulapendula_2f.p3d";
 		pf_groundOffset = 7.569;
+		pf_trunk[] = {0.16, 0.05};
 		pf_fellClass = "none";
 		pf_isTree = 1;
 	};
@@ -1153,6 +1245,7 @@ class CfgVehicles
 		displayName = "Growing Acacia (forest)";
 		model = "DZ\plants\tree\t_robiniapseudoacacia_1f.p3d";
 		pf_groundOffset = 2.418;
+		pf_trunk[] = {-0.23, 0.06};
 		pf_nextStage = "PF_Tree_AcaciaForest";
 		pf_kind = "treeStep";
 		pf_isTree = 1;
@@ -1163,6 +1256,7 @@ class CfgVehicles
 		displayName = "Planted Acacia (forest)";
 		model = "DZ\plants\tree\t_robiniapseudoacacia_2f.p3d";
 		pf_groundOffset = 7.102;
+		pf_trunk[] = {-0.03, 0.36};
 		pf_fellClass = "none";
 		pf_isTree = 1;
 	};
@@ -1173,6 +1267,202 @@ class CfgVehicles
 		descriptionShort = "Nothing to see here, move along";
 		storageCategory = 10;
 		pf_isProjection = 1;
+	};
+	// snowy / frozen variants (CLIMATES), planted by the normal seed when PF_Climate says so
+	class PF_Tree_SpruceWinter_Young: PF_Seedling
+	{
+		scope = 2;
+		displayName = "Young SpruceWinter";
+		pf_nextStage = "PF_Tree_SpruceWinter_Medium";
+		pf_kind = "treeStep";
+		pf_isTree = 1;
+	};
+	class PF_Tree_SpruceWinter_Medium: PF_Bush_Base
+	{
+		scope = 2;
+		displayName = "Growing SpruceWinter";
+		model = "DZ\plants_sakhal\winter\t_piceaabies_1s_winter.p3d";
+		pf_groundOffset = 1.903;
+		pf_trunk[] = {-0.14, 0.00};
+		pf_nextStage = "PF_Tree_SpruceWinter";
+		pf_kind = "treeStep";
+		pf_isTree = 1;
+	};
+	class PF_Tree_SpruceWinter: PF_Bush_Base
+	{
+		scope = 2;
+		displayName = "Planted SpruceWinter";
+		model = "DZ\plants_sakhal\winter\t_piceaabies_2sb_winter.p3d";
+		pf_groundOffset = 7.244;
+		pf_trunk[] = {0.21, 0.12};
+		pf_fellClass = "PF_Tree_SpruceWinter_Stump";
+		pf_isTree = 1;
+	};
+	class PF_Tree_SpruceWinter_Stump: PF_Bush_Base
+	{
+		scope = 2;
+		displayName = "SpruceWinter Stump";
+		model = "DZ\plants_sakhal\winter\d_piceaabies_stump_winter.p3d";
+	};
+	class PF_Tree_SpruceFrozen_Young: PF_Seedling
+	{
+		scope = 2;
+		displayName = "Young SpruceFrozen";
+		pf_nextStage = "PF_Tree_SpruceFrozen_Medium";
+		pf_kind = "treeStep";
+		pf_isTree = 1;
+	};
+	class PF_Tree_SpruceFrozen_Medium: PF_Bush_Base
+	{
+		scope = 2;
+		displayName = "Growing SpruceFrozen";
+		model = "DZ\plants_sakhal\frozen\t_piceaabies_1s_frozen.p3d";
+		pf_groundOffset = 1.671;
+		pf_trunk[] = {-0.10, 0.06};
+		pf_nextStage = "PF_Tree_SpruceFrozen";
+		pf_kind = "treeStep";
+		pf_isTree = 1;
+	};
+	class PF_Tree_SpruceFrozen: PF_Bush_Base
+	{
+		scope = 2;
+		displayName = "Planted SpruceFrozen";
+		model = "DZ\plants_sakhal\frozen\t_piceaabies_2sb_frozen.p3d";
+		pf_groundOffset = 7.655;
+		pf_trunk[] = {0.20, -0.08};
+		pf_fellClass = "PF_Tree_SpruceFrozen_Stump";
+		pf_isTree = 1;
+	};
+	class PF_Tree_SpruceFrozen_Stump: PF_Bush_Base
+	{
+		scope = 2;
+		displayName = "SpruceFrozen Stump";
+		model = "DZ\plants_sakhal\winter\d_piceaabies_stump_winter.p3d";
+	};
+	class PF_Tree_SpruceForestWinter_Young: PF_Seedling
+	{
+		scope = 2;
+		displayName = "Young SpruceForestWinter";
+		pf_nextStage = "PF_Tree_SpruceForestWinter_Medium";
+		pf_kind = "treeStep";
+		pf_isTree = 1;
+	};
+	class PF_Tree_SpruceForestWinter_Medium: PF_Bush_Base
+	{
+		scope = 2;
+		displayName = "Growing SpruceForestWinter";
+		model = "DZ\plants_sakhal\winter\t_piceaabies_1f_winter.p3d";
+		pf_groundOffset = 4.066;
+		pf_nextStage = "PF_Tree_SpruceForestWinter";
+		pf_kind = "treeStep";
+		pf_isTree = 1;
+	};
+	class PF_Tree_SpruceForestWinter: PF_Bush_Base
+	{
+		scope = 2;
+		displayName = "Planted SpruceForestWinter";
+		model = "DZ\plants_sakhal\winter\t_piceaabies_2f_winter.p3d";
+		pf_groundOffset = 8.048;
+		pf_trunk[] = {-0.18, 0.12};
+		pf_fellClass = "PF_Tree_SpruceForestWinter_Stump";
+		pf_isTree = 1;
+	};
+	class PF_Tree_SpruceForestWinter_Stump: PF_Bush_Base
+	{
+		scope = 2;
+		displayName = "SpruceForestWinter Stump";
+		model = "DZ\plants_sakhal\winter\d_piceaabies_stump_winter.p3d";
+	};
+	class PF_Tree_SpruceForestFrozen_Young: PF_Seedling
+	{
+		scope = 2;
+		displayName = "Young SpruceForestFrozen";
+		pf_nextStage = "PF_Tree_SpruceForestFrozen_Medium";
+		pf_kind = "treeStep";
+		pf_isTree = 1;
+	};
+	class PF_Tree_SpruceForestFrozen_Medium: PF_Bush_Base
+	{
+		scope = 2;
+		displayName = "Growing SpruceForestFrozen";
+		model = "DZ\plants_sakhal\frozen\t_piceaabies_1f_frozen.p3d";
+		pf_groundOffset = 4.410;
+		pf_nextStage = "PF_Tree_SpruceForestFrozen";
+		pf_kind = "treeStep";
+		pf_isTree = 1;
+	};
+	class PF_Tree_SpruceForestFrozen: PF_Bush_Base
+	{
+		scope = 2;
+		displayName = "Planted SpruceForestFrozen";
+		model = "DZ\plants_sakhal\frozen\t_piceaabies_2f_frozen.p3d";
+		pf_groundOffset = 8.984;
+		pf_trunk[] = {0.20, -0.12};
+		pf_fellClass = "PF_Tree_SpruceForestFrozen_Stump";
+		pf_isTree = 1;
+	};
+	class PF_Tree_SpruceForestFrozen_Stump: PF_Bush_Base
+	{
+		scope = 2;
+		displayName = "SpruceForestFrozen Stump";
+		model = "DZ\plants_sakhal\winter\d_piceaabies_stump_winter.p3d";
+	};
+	class PF_Tree_BirchWinter_Young: PF_Seedling
+	{
+		scope = 2;
+		displayName = "Young BirchWinter";
+		pf_nextStage = "PF_Tree_BirchWinter_Medium";
+		pf_kind = "treeStep";
+		pf_isTree = 1;
+	};
+	class PF_Tree_BirchWinter_Medium: PF_Bush_Base
+	{
+		scope = 2;
+		displayName = "Growing BirchWinter";
+		model = "DZ\plants_sakhal\winter\t_betulapendula_1s_winter.p3d";
+		pf_groundOffset = 3.447;
+		pf_nextStage = "PF_Tree_BirchWinter";
+		pf_kind = "treeStep";
+		pf_isTree = 1;
+	};
+	class PF_Tree_BirchWinter: PF_Bush_Base
+	{
+		scope = 2;
+		displayName = "Planted BirchWinter";
+		model = "DZ\plants_sakhal\winter\t_betulapendula_2s_winter.p3d";
+		pf_groundOffset = 6.349;
+		pf_trunk[] = {0.16, 0.56};
+		pf_fellClass = "none";
+		pf_isTree = 1;
+	};
+	class PF_Tree_BirchForestWinter_Young: PF_Seedling
+	{
+		scope = 2;
+		displayName = "Young BirchForestWinter";
+		pf_nextStage = "PF_Tree_BirchForestWinter_Medium";
+		pf_kind = "treeStep";
+		pf_isTree = 1;
+	};
+	class PF_Tree_BirchForestWinter_Medium: PF_Bush_Base
+	{
+		scope = 2;
+		displayName = "Growing BirchForestWinter";
+		model = "DZ\plants_sakhal\winter\t_betulapendula_1f_winter.p3d";
+		pf_groundOffset = 5.778;
+		pf_trunk[] = {0.24, 0.00};
+		pf_nextStage = "PF_Tree_BirchForestWinter";
+		pf_kind = "treeStep";
+		pf_isTree = 1;
+	};
+	class PF_Tree_BirchForestWinter: PF_Bush_Base
+	{
+		scope = 2;
+		displayName = "Planted BirchForestWinter";
+		model = "DZ\plants_sakhal\winter\t_betulapendula_2f_winter.p3d";
+		pf_groundOffset = 5.844;
+		pf_trunk[] = {-0.05, 0.22};
+		pf_fellClass = "none";
+		pf_isTree = 1;
 	};
 	// Badlands (nasdara): trees and bushes, generated from the NASDARA_* tables
 	class PF_Tree_Fig_Young: PF_Seedling
@@ -1190,6 +1480,7 @@ class CfgVehicles
 		displayName = "Growing Fig";
 		model = "DZ\plants_takistan\tree\t_ficusbenjamina_1s.p3d";
 		pf_groundOffset = 2.075;
+		pf_trunk[] = {0.16, 0.70};
 		pf_nextStage = "PF_Tree_Fig";
 		pf_kind = "treeStep";
 		pf_isTree = 1;
@@ -1201,6 +1492,7 @@ class CfgVehicles
 		displayName = "Planted Fig";
 		model = "DZ\plants_takistan\tree\t_ficusbenjamina_2s.p3d";
 		pf_groundOffset = 3.778;
+		pf_trunk[] = {-1.20, 2.09};
 		pf_fellClass = "none";
 		pf_isTree = 1;
 		pf_world = "nasdara";
@@ -1228,6 +1520,7 @@ class CfgVehicles
 		displayName = "Growing Turkish Pine";
 		model = "DZ\plants_takistan\tree\t_pinusbrutia_1s.p3d";
 		pf_groundOffset = 2.431;
+		pf_trunk[] = {0.45, -0.37};
 		pf_nextStage = "PF_Tree_TurkishPine";
 		pf_kind = "treeStep";
 		pf_isTree = 1;
@@ -1239,6 +1532,7 @@ class CfgVehicles
 		displayName = "Planted Turkish Pine";
 		model = "DZ\plants_takistan\tree\t_pinusbrutia_2s.p3d";
 		pf_groundOffset = 4.964;
+		pf_trunk[] = {-0.97, 0.62};
 		pf_fellClass = "PF_Tree_TurkishPine_Stump";
 		pf_isTree = 1;
 		pf_world = "nasdara";
@@ -1273,6 +1567,7 @@ class CfgVehicles
 		displayName = "Growing Olive";
 		model = "DZ\plants_takistan\tree\t_oleaeuropaea_1s.p3d";
 		pf_groundOffset = 3.591;
+		pf_trunk[] = {0.18, 0.07};
 		pf_nextStage = "PF_Tree_Olive";
 		pf_kind = "treeStep";
 		pf_isTree = 1;
@@ -1284,6 +1579,7 @@ class CfgVehicles
 		displayName = "Planted Olive";
 		model = "DZ\plants_takistan\tree\t_oleaeuropaea_2s.p3d";
 		pf_groundOffset = 3.749;
+		pf_trunk[] = {0.57, 1.30};
 		pf_fellClass = "none";
 		pf_isTree = 1;
 		pf_world = "nasdara";
@@ -1311,6 +1607,7 @@ class CfgVehicles
 		displayName = "Growing Date Palm";
 		model = "DZ\plants_takistan\tree\t_phoenixrupicola_1s.p3d";
 		pf_groundOffset = 2.411;
+		pf_trunk[] = {-0.05, 0.30};
 		pf_nextStage = "PF_Tree_DatePalm";
 		pf_kind = "treeStep";
 		pf_isTree = 1;
@@ -1322,6 +1619,7 @@ class CfgVehicles
 		displayName = "Planted Date Palm";
 		model = "DZ\plants_takistan\tree\t_phoenixrupicola_3s.p3d";
 		pf_groundOffset = 4.929;
+		pf_trunk[] = {0.76, -0.75};
 		pf_fellClass = "none";
 		pf_isTree = 1;
 		pf_world = "nasdara";
@@ -1360,6 +1658,7 @@ class CfgVehicles
 		displayName = "Planted Poplar";
 		model = "DZ\plants_takistan\tree\t_populus_2s.p3d";
 		pf_groundOffset = 6.720;
+		pf_trunk[] = {0.08, 0.06};
 		pf_fellClass = "none";
 		pf_isTree = 1;
 		pf_world = "nasdara";
@@ -1398,6 +1697,7 @@ class CfgVehicles
 		displayName = "Planted Ash";
 		model = "DZ\plants_takistan\tree\t_fraxinusexcelsior_2s_spring.p3d";
 		pf_groundOffset = 6.067;
+		pf_trunk[] = {0.09, -0.28};
 		pf_fellClass = "none";
 		pf_isTree = 1;
 		pf_world = "nasdara";
@@ -1436,6 +1736,7 @@ class CfgVehicles
 		displayName = "Planted Plum";
 		model = "DZ\plants_takistan\tree\t_prunusdomestica_2s.p3d";
 		pf_groundOffset = 4.068;
+		pf_trunk[] = {0.06, 0.12};
 		pf_fellClass = "none";
 		pf_isTree = 1;
 		pf_world = "nasdara";
@@ -1769,6 +2070,8 @@ class CfgVehicles
 		displayName = "Dwarf Birch Seed";
 		projectionTypename = "PF_Bush_DwarfBirch_Placing";
 		pf_plantClass = "PF_Bush_DwarfBirch_Seedling";
+		pf_plantClassWinter = "PF_Bush_DwarfBirchWinter_Seedling";
+		pf_plantClassFrozen = "PF_Bush_DwarfBirchWinter_Seedling";
 	};
 	// <<GEN SEEDS BEGIN>>
 	class PF_Seed_Spruce: PF_Seed_Base
@@ -1777,6 +2080,8 @@ class CfgVehicles
 		displayName = "Spruce Seed";
 		projectionTypename = "PF_Tree_Spruce_Placing";
 		pf_plantClass = "PF_Tree_Spruce_Young";
+		pf_plantClassWinter = "PF_Tree_SpruceWinter_Young";
+		pf_plantClassFrozen = "PF_Tree_SpruceFrozen_Young";
 		pf_isTree = 1;
 		hiddenSelectionsTextures[] = { "PlantableFlora\data\tree_seeds_co.paa" };
 		hiddenSelectionsMaterials[] = { "PlantableFlora\data\tree_seeds.rvmat" };
@@ -1817,6 +2122,8 @@ class CfgVehicles
 		displayName = "Birch Seed";
 		projectionTypename = "PF_Tree_Birch_Placing";
 		pf_plantClass = "PF_Tree_Birch_Young";
+		pf_plantClassWinter = "PF_Tree_BirchWinter_Young";
+		pf_plantClassFrozen = "PF_Tree_BirchWinter_Young";
 		pf_isTree = 1;
 		hiddenSelectionsTextures[] = { "PlantableFlora\data\tree_seeds_co.paa" };
 		hiddenSelectionsMaterials[] = { "PlantableFlora\data\tree_seeds.rvmat" };
@@ -1867,6 +2174,16 @@ class CfgVehicles
 		displayName = "White Poplar Seed";
 		projectionTypename = "PF_Tree_WhitePoplar_Placing";
 		pf_plantClass = "PF_Tree_WhitePoplar_Young";
+		pf_isTree = 1;
+		hiddenSelectionsTextures[] = { "PlantableFlora\data\tree_seeds_co.paa" };
+		hiddenSelectionsMaterials[] = { "PlantableFlora\data\tree_seeds.rvmat" };
+	};
+	class PF_Seed_BlackPoplar: PF_Seed_Base
+	{
+		scope = 2;
+		displayName = "Black Poplar Seed";
+		projectionTypename = "PF_Tree_BlackPoplar_Placing";
+		pf_plantClass = "PF_Tree_BlackPoplar_Young";
 		pf_isTree = 1;
 		hiddenSelectionsTextures[] = { "PlantableFlora\data\tree_seeds_co.paa" };
 		hiddenSelectionsMaterials[] = { "PlantableFlora\data\tree_seeds.rvmat" };
@@ -1937,6 +2254,8 @@ class CfgVehicles
 		displayName = "Spruce Seed (forest)";
 		projectionTypename = "PF_Tree_SpruceForest_Placing";
 		pf_plantClass = "PF_Tree_SpruceForest_Young";
+		pf_plantClassWinter = "PF_Tree_SpruceForestWinter_Young";
+		pf_plantClassFrozen = "PF_Tree_SpruceForestFrozen_Young";
 		pf_isTree = 1;
 		hiddenSelectionsTextures[] = { "PlantableFlora\data\tree_seeds_co.paa" };
 		hiddenSelectionsMaterials[] = { "PlantableFlora\data\tree_seeds.rvmat" };
@@ -1977,6 +2296,8 @@ class CfgVehicles
 		displayName = "Birch Seed (forest)";
 		projectionTypename = "PF_Tree_BirchForest_Placing";
 		pf_plantClass = "PF_Tree_BirchForest_Young";
+		pf_plantClassWinter = "PF_Tree_BirchForestWinter_Young";
+		pf_plantClassFrozen = "PF_Tree_BirchForestWinter_Young";
 		pf_isTree = 1;
 		hiddenSelectionsTextures[] = { "PlantableFlora\data\tree_seeds_co.paa" };
 		hiddenSelectionsMaterials[] = { "PlantableFlora\data\tree_seeds.rvmat" };
@@ -2136,6 +2457,13 @@ class CfgPlantableFlora
 	{
 		class nasdara { texture = "DZ\structures_takistan\Data\Dirt\dirt_pile_01_CO.paa"; limedTexture = "DZ\structures_takistan\Data\Mud\Mud_soil_co.paa"; };
 	};
+	// frozen ground per world (PF_Frozen): planting only where a fire has thawed it. Worlds not listed: every surface
+	// with the vanilla snow melt patch (CfgSurfaces underObjectDecal), e.g. Winter Chernarus. Config FrozenSurfaces overrides.
+	class Frozen
+	{
+		class sakhal { surfaces[] = { "sakhal_snow", "sakhal_snow_forest" }; };	// sakhal_grass_brown has the melt patch too but stays plantable (user, 2026-10-23)
+		class namalsk { surfaces[] = { "nam_snow", "nam_snowgrass" }; };	// nam_snowgrass has no melt patch
+	};
 	class Wild
 	{
 		// <<GEN WILD BEGIN>>
@@ -2149,6 +2477,7 @@ class CfgPlantableFlora
 		class Walnut { source = "tree"; match[] = { "juglansregia" }; seed = "PF_Seed_Walnut"; };
 		class Hornbeam { source = "tree"; match[] = { "carpinus" }; seed = "PF_Seed_Hornbeam"; };
 		class WhitePoplar { source = "tree"; match[] = { "populusalba" }; seed = "PF_Seed_WhitePoplar"; };
+		class BlackPoplar { source = "tree"; match[] = { "populusnigra" }; seed = "PF_Seed_BlackPoplar"; };
 		class Willow { source = "tree"; match[] = { "salixalba" }; seed = "PF_Seed_Willow"; };
 		class Rowan { source = "tree"; match[] = { "sorbus" }; seed = "PF_Seed_Rowan"; };
 		class Acacia { source = "tree"; match[] = { "robiniapseudoacacia" }; seed = "PF_Seed_Acacia"; };
@@ -2177,10 +2506,20 @@ class CfgPlantableFlora
 		class SyrianRue { source = "bush"; match[] = { "plants_takistan\bush\b_peganumharmala" }; seed = "PF_Seed_SyrianRue"; };
 		// <<GEN WILD END>>
 		class Rose { source = "bush"; match[] = { "rosacanina" }; seed = "PF_Seed_Rose"; };
-		class Hazel { source = "bush"; match[] = { "corylusavellana" }; seed = "PF_Seed_Hazel"; };
+		class Hazel { source = "bush"; match[] = { "corylusavellana", "corylusheterophylla" }; seed = "PF_Seed_Hazel"; };
 		class Hawthorn { source = "bush"; match[] = { "crataeguslaevigata" }; seed = "PF_Seed_Hawthorn"; };
 		class Blackthorn { source = "bush"; match[] = { "prunusspinosa" }; seed = "PF_Seed_Blackthorn"; };
 		class Elder { source = "bush"; match[] = { "sambucusnigra" }; seed = "PF_Seed_Elder"; };
-		class DwarfBirch { source = "bush"; match[] = { "betulahumilis" }; seed = "PF_Seed_DwarfBirch"; };
+		class DwarfBirch { source = "bush"; match[] = { "betulahumilis", "betulanana" }; seed = "PF_Seed_DwarfBirch"; };
+		// small trees and saplings the game treats as bushes (cut with a knife, no seed search): cutting them gives the
+		// tree seed. Forest models (_1f) give the forest seed like the tree search. Also hits the Livonia (_summer),
+		// Frostline (_winter, _frozen) and Deer Isle snow variants
+		class SpruceSapling { source = "bush"; match[] = { "piceaabies_1s", "piceaabies_snow_1s" }; seed = "PF_Seed_Spruce"; };
+		class SpruceForestSapling { source = "bush"; match[] = { "piceaabies_1f", "piceaabies_snow_1f" }; seed = "PF_Seed_SpruceForest"; };
+		class PineSapling { source = "bush"; match[] = { "pinussylvestris_1s" }; seed = "PF_Seed_Pine"; };
+		class PineForestSapling { source = "bush"; match[] = { "pinussylvestris_1f" }; seed = "PF_Seed_PineForest"; };
+		class BeechForestSapling { source = "bush"; match[] = { "fagussylvatica_1f" }; seed = "PF_Seed_BeechForest"; };
+		class OakForestSapling { source = "bush"; match[] = { "quercusrobur_1f" }; seed = "PF_Seed_OakForest"; };
+		class BirchForestSapling { source = "bush"; match[] = { "betulapendula_1f" }; seed = "PF_Seed_BirchForest"; };
 	};
 };

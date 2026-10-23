@@ -22,11 +22,10 @@ class PF_Seed_Base extends ItemBase
 		return false;
 	}
 
-	string GetPlantClass()
+	// the class planted at pos: pf_plantClass, or its snowy/frozen variant there (PF_Climate); "" = too cold
+	string GetPlantClass(vector pos)
 	{
-		string plantClass;
-		g_Game.ConfigGetText("CfgVehicles " + GetType() + " pf_plantClass", plantClass);
-		return plantClass;
+		return PF_Climate.PlantClassFor(GetType(), pos);
 	}
 
 	bool IsTreeSeed()
@@ -108,6 +107,9 @@ class PF_Seed_Base extends ItemBase
 		// a seed from another map (Badlands seed elsewhere, Chernarus seed on Badlands; PF_World)
 		if (!PF_World.IsNativeClass(GetType()))
 			return PlaceResult(player, false, "This seed won't grow here");
+		// snowy/frozen surroundings and no snowy model for this species (PF_Climate, cached per 10 m cell)
+		if (GetPlantClass(position) == "")
+			return PlaceResult(player, false, "Too cold here");
 		PF_Config cfg = PF_Config.Get();
 		// the projection origin sits above the terrain by the model's ground offset (trees: half their height)
 		PlayerBase pb = PlayerBase.Cast(player);
@@ -129,6 +131,9 @@ class PF_Seed_Base extends ItemBase
 		{
 			// the hologram snaps onto a mound/plot (PF_Hologram), so prepared ground must be right here
 			EntityAI ground = PF_PreparedGround.FindNear(position, 0.5);
+			// frozen ground: the hole can't be dug yet, say why instead of asking for a hole
+			if (!ground && PF_Frozen.IsFrozenUnthawed(position))
+				return PlaceResult(player, false, "Frozen ground: make a fire here first");
 			if (!ground)
 				return PlaceResult(player, false, "Needs a planting hole (dig one with a shovel) or an empty garden plot");
 			if (!PF_PreparedGround.IsUsable(ground))
@@ -148,8 +153,9 @@ class PF_Seed_Base extends ItemBase
 			if (Math.AbsFloat(position[1] - surfaceHeight) > 0.3)
 				return PlaceResult(player, false, "Must be planted in the ground");
 
-			if (!g_Game.IsSurfaceFertile(surfaceType))
-				return PlaceResult(player, false, "Ground not fertile");
+			string groundBlock = PF_Frozen.GroundBlock(position, surfaceType);
+			if (groundBlock != "")
+				return PlaceResult(player, false, groundBlock);
 		}
 
 		// a planting mound already kept TreeSpacing to holes and trees when it was dug (CanDigAt);
@@ -210,9 +216,9 @@ class PF_Seed_Base extends ItemBase
 		if (!g_Game.IsServer())
 			return;
 
-		string plantClass = GetPlantClass();
+		string plantClass = GetPlantClass(position);
 		if (plantClass == "")
-			return;
+			return;	// too cold (CanBePlaced refused it already)
 
 		// the mound/plot is used up; fertilizer and water in it speed up every growth step of this plant
 		float growFactor = 1;
@@ -239,7 +245,9 @@ class PF_Seed_Base extends ItemBase
 		{
 			plant.SetGrowFactor(growFactor);
 			plant.SetSoil(soilFertilizer, soilWatered);
-			plant.SetOrientation(Vector(orientation[0], 0, 0));
+			// random heading (user 2026-10-23): with the player's heading, plants of one species planted facing the same
+			// way all grew into the identical tree; the seedling is round, so nobody sees the difference at planting
+			plant.SetOrientation(Vector(Math.RandomFloat(0, 360), 0, 0));
 			// seedling: tilt with the slope like the hole (SnapToGround aligns it for pf_alignToTerrain)
 			plant.SnapToGround();
 			PlayerIdentity identity = player.GetIdentity();

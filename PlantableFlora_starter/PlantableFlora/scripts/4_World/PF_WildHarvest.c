@@ -130,16 +130,18 @@ class PF_WildHarvest
 		if (count == 0)
 			return;
 
-		// the seeds drop on the ground at the bush, the player has to pick them up
+		// the seeds drop on the ground in front of the player (like the tree search), the player has to pick them up.
+		// Not at the bush: its origin sits ~2 m up in the crown of big bushes, 2-3 m away, the seeds were never found
 		string seedName;
+		vector pos;
 		for (int i = 0; i < count; i++)
 		{
-			vector pos = bush.GetPosition() + Vector(Math.RandomFloat(-0.5, 0.5), 0, Math.RandomFloat(-0.5, 0.5));
+			pos = player.GetPosition() + player.GetDirection() * 0.7 + Vector(Math.RandomFloat(-0.2, 0.2), 0, Math.RandomFloat(-0.2, 0.2));
 			EntityAI seed = EntityAI.Cast(g_Game.CreateObjectEx(seedClass, pos, ECE_PLACE_ON_SURFACE));
 			if (seed)
 				seedName = seed.GetDisplayName();
 		}
-		PF_Log.Debug("seeds dropped: " + count + " x " + seedClass);
+		PF_Log.Debug("seeds dropped: " + count + " x " + seedClass + " at " + pos);
 		if (seedName != "")
 			PF_Notify.Send(player, FoundSeedsText(count, seedName));
 	}

@@ -75,7 +75,9 @@ Entries are usage Farm/Village, tier 1-2, nominal 3-4. Tune `nominal`/`min` like
 |---|---|
 | Chernarus, Livonia | Trees: spruce, oak, pine, beech, birch, larch, ash, walnut, hornbeam, white poplar, willow, rowan, acacia, apple, pear, plum (+ forest variants). Bushes: rose, hazel, hawthorn, blackthorn, elder, dwarf birch |
 | Badlands | Trees: fig, Turkish pine, olive, date palm, poplar, ash, plum. Bushes: oleander, fig bush, prickly pear, cycas, Syrian rue. Wild Badlands trees and bushes give these seeds; cutting a wild Turkish pine sapling gives a Turkish pine seed |
-| Frostline | the Chernarus species (not adapted to the winter look yet) |
+| Frostline | the Chernarus species. Snow ground needs a fire first (3.6). Near snowy or frozen wild trees, spruce, birch and dwarf birch grow in their snowy/frozen look; other species refuse there ("Too cold here") |
+| Namalsk | the Chernarus species; snow ground needs a fire first (3.6). Not tested |
+| Winter Chernarus (map mod) | the Chernarus species; the mod's snowy tree models are used automatically. All its ground is snow-covered, so every planting spot needs a fire first (3.6). Not tested |
 | Other maps | the Chernarus species; wild trees only give seeds if the map uses vanilla tree models |
 
 **Tested (0.1.0):**
@@ -85,7 +87,7 @@ Entries are usage Farm/Village, tier 1-2, nominal 3-4. Tune `nominal`/`min` like
 | Chernarus | fully tested |
 | Livonia | all growth stages and heights checked; same species and mechanics as Chernarus |
 | Badlands | fully tested: own species, heights, soil look, wild seeds, fruit, caves |
-| Frostline | works (planting, growth, wild seeds from birch and spruce); planted deciduous trees keep their summer look |
+| Frostline | works (planting, growth, wild seeds from birch and spruce). Tested 2026-10-23: thawing snow ground with a fire, spruce growing in the winter look |
 | Namalsk, Deer Isle and other maps | not tested. Vanilla tree models give seeds, own models of a map mod don't (see 9) |
 
 Badlands soil: only soil, green grass, mud and the pine forest floor are fertile (vanilla), about 40 % of the land.
@@ -146,6 +148,26 @@ With the mod (`TreeShade`, on by default) a tree crown is shade:
 - Planted trees shade exactly like wild ones, so the shade gives nothing away.
 
 A grove next to the base is a cool spot to wait out the midday sun.
+
+### 3.6 Frozen ground (winter maps)
+
+On winter maps the snow ground is frozen: no planting hole, no seed. A fire thaws it:
+
+1. Build a fireplace (or a fire barrel) on the snow and keep it burning hot (at least 40 % of its maximum temperature; the vanilla melt patch under the fire is clearly visible by then).
+2. After `ThawBurnMinutes` (5) of hot fire, the ground within `ThawRadius` (2 m) of the fire is thawed.
+3. Dig planting holes and plant there. The ground stays thawed for `ThawMinutes` (30) after the fire is out or gone; a hole that is already dug keeps its state.
+
+Without a fire the seed preview says "Frozen ground: make a fire here first" and the digging tool offers no "Dig planting hole". A server restart refreezes thawed ground (holes stay).
+
+Which ground is frozen:
+
+| Map | Frozen surfaces |
+|---|---|
+| Frostline | `sakhal_snow`, `sakhal_snow_forest`. The brown grass (`sakhal_grass_brown`) stays plantable without a fire |
+| Namalsk | `nam_snow`, `nam_snowgrass` |
+| Any other map | every surface with the vanilla snow melt patch under fires. Covers Winter Chernarus (all its ground); normal Chernarus, Livonia and Badlands have none |
+
+`FrozenSurfaces` in `config.json` replaces the list (surface names, e.g. for a map mod with own snow surfaces). `FrozenGround: false` switches the rule off; snow ground then behaves like vanilla (Frostline and Namalsk snow is not fertile, so nothing grows there).
 
 ---
 
@@ -355,6 +377,16 @@ To see the shade at work: put your Steam64 ID into `AdminIds`, set `ShadeDebug` 
 |---|---|---|
 | `TreeShade` | true | A tree crown (wild or planted, from about 4 m) is shade: no vanilla sun heat underneath. Only maps with sun heat (Badlands). false = vanilla, trees give no shade. |
 | `ShadeDebug` | false | Shade overlay for the admins in `AdminIds` (6.4). |
+
+### 7.9 Frozen ground (3.6)
+
+| Key | Default | What |
+|---|---|---|
+| `FrozenGround` | true | Winter maps: planting holes and seeds on frozen ground only where a fire has thawed it. false = snow ground behaves like vanilla. |
+| `ThawBurnMinutes` | 5 | How long a fireplace or fire barrel must burn hot on frozen ground. |
+| `ThawMinutes` | 30 | How long the ground stays thawed after the fire is out. |
+| `ThawRadius` | 2 | m around the fire. |
+| `FrozenSurfaces` | [] | Surface names that count as frozen. Empty = map default (3.6). |
 
 ---
 

@@ -34,6 +34,14 @@ modded class DayZGame
 			return;
 		}
 
+		if (!target && rpc_type == PF_RPC.SYNC_THAW)
+		{
+			Param1<ref array<vector>> spots = new Param1<ref array<vector>>(null);
+			if (ctx.Read(spots) && spots.param1)
+				PF_ClientState.ThawSpots = spots.param1;
+			return;
+		}
+
 		if (!target && rpc_type == PF_RPC.SHADE_INFO)
 		{
 			Param1<string> shade = new Param1<string>("");

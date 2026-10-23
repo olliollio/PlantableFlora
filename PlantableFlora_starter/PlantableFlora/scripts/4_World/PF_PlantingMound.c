@@ -460,8 +460,8 @@ class PF_ActionDigPlantingMound : ActionContinuousBase
 			fail = "mound/plot within " + holeSpacing + " m";
 		else if (IsTreeWithin(pos, cfg.TreeSpacing))
 			fail = "planted tree within " + cfg.TreeSpacing + " m";
-		else if (!g_Game.IsSurfaceFertile(surface))
-			fail = "surface not fertile: " + surface;
+		else if (PF_Frozen.GroundBlock(pos, surface) != "")
+			fail = PF_Frozen.GroundBlock(pos, surface) + ": " + surface;
 		else
 			fail = PF_Placement.Check(player, pos, isTree);
 		if (fail != s_LastDigFail)

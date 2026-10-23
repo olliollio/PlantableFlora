@@ -1,20 +1,18 @@
 # Roadmap
 
-What may come after 0.2.0. Nothing here is a promise, order and details can change. Ideas and wishes are welcome: [open an issue](https://github.com/olliollio/PlantableFlora/issues).
+What may come after 0.3.0. Nothing here is a promise, order and details can change. Ideas and wishes are welcome: [open an issue](https://github.com/olliollio/PlantableFlora/issues).
 
 ## Next (v1.1)
 
 - **Map mods without an addon.** Admins of custom maps (Namalsk, Deer Isle, …) can tell the mod in `config.json` which wild tree of their map gives which seed, e.g. the map's own spruce gives spruce seeds. No extra PBO needed for that.
-- **Frostline look.** Planted trees take the winter or late-fall look of the wild trees around them instead of the green summer models.
 
 ## Planned
 
 - **Dry maps need more water.** A Badlands tree needs more water than a Chernarus tree, poured in several steps. Admin settings per map and per species (olive and date palm are drought hardy).
 - **Re-watering.** Optionally, trees on dry maps must be watered again until they are grown, otherwise they wither.
 - **More ground for planting on Badlands.** Optional admin setting to allow dry grass and sand (vanilla only allows about 40 % of the land), with a higher water need.
-- **Winter maps:** frozen ground can only be dug where a fire has burned for a while; digging takes longer on frozen ground.
 - **Fruit again.** Own fruit trees bear again after some time (today: once per player per server restart).
-- **Namalsk and Deer Isle** tested and supported.
+- **Namalsk, Deer Isle and Winter Chernarus** tested (frozen ground already works there, untested).
 
 ## Ideas (not decided)
 

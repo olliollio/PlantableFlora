@@ -5,6 +5,7 @@ class PF_RPC
 	static const int SYNC_COUNT = 714310102;	// server -> owner client: how many trees and bushes they own (outside / inside their bases)
 	static const int SYNC_FLAGS = 714310103;	// server -> client: territory flags the player is a member of
 	static const int SHADE_INFO = 714310104;	// server -> client: shade debug text (config ShadeDebug), every 2 s
+	static const int SYNC_THAW = 714310105;	// server -> clients: positions of thawed ground on winter maps (PF_Frozen)
 }
 
 // Admin zone without planting (traders, safe zones, events): world position (Y is ignored) + radius in m
@@ -91,6 +92,11 @@ class PF_Config
 	int FruitMaxPerSearch = 2;		// 1 + up to this many extra fruits
 
 	// world
+	bool FrozenGround = true;		// winter maps: planting holes and seeds on frozen ground (snow) only where a fire has thawed it (PF_Frozen); false = snow ground behaves like any other ground (vanilla: not fertile)
+	float ThawBurnMinutes = 5;		// a fireplace or fire barrel must burn hot (at least 40 % of its max temperature, the vanilla melt patch under it mostly grown) this long on frozen ground
+	float ThawMinutes = 30;			// the thawed ground stays plantable this long after the fire is out
+	float ThawRadius = 2;			// m around the fire (user 2026-10-23: 2 m)
+	ref array<string> FrozenSurfaces;	// surface names that count as frozen; empty = map default (Frostline: sakhal_snow, sakhal_snow_forest; Namalsk: nam_snow, nam_snowgrass; other maps: every surface with the vanilla snow melt patch, e.g. Winter Chernarus)
 	bool TreeShade = true;			// a player under a tree crown (wild or planted) is in the shade: no vanilla sun heat (only Badlands has it, up to +9.6 °C at noon); false = vanilla (trees cast no shade)
 
 	// admin
@@ -129,6 +135,7 @@ class PF_Config
 		NoPlantZones = new array<ref PF_NoPlantZone>();
 		GroundOffsetOverrides = new array<ref PF_OffsetOverride>();
 		AdminIds = new array<string>();
+		FrozenSurfaces = new array<string>();
 	}
 
 	// server: player is in AdminIds (Steam64 ID, or the hashed DayZ ID)
@@ -192,6 +199,8 @@ class PF_Config
 				s_Instance.GroundOffsetOverrides = new array<ref PF_OffsetOverride>();
 			if (!s_Instance.AdminIds)
 				s_Instance.AdminIds = new array<string>();
+			if (!s_Instance.FrozenSurfaces)
+				s_Instance.FrozenSurfaces = new array<string>();
 		}
 		else
 		{
@@ -263,5 +272,6 @@ class PF_ClientState
 			return " (Base: Trees " + OwnTreesInBase + "/" + cfg.MaxTreesPerPlayerInBase + ", Bushes " + OwnBushesInBase + "/" + cfg.MaxBushesPerPlayerInBase + ")";
 		return " (Trees " + OwnTrees + "/" + cfg.MaxTreesPerPlayer + ", Bushes " + OwnBushes + "/" + cfg.MaxBushesPerPlayer + ")";
 	}
-	static ref array<string> MyFlags = new array<string>();	// keys of territory flags this player is a member of (PF_Territory.KeyOf)
+	static ref array<string> MyFlags = new array<string>();
+	static ref array<vector> ThawSpots = new array<vector>();	// thawed ground on winter maps (PF_Frozen, synced by the server)	// keys of territory flags this player is a member of (PF_Territory.KeyOf)
 }

@@ -232,7 +232,7 @@ class PF_Bush_Base extends ItemBase
 		if (fellClass == "")
 			return;
 
-		vector pos = GetPosition();
+		vector pos = GetTrunkPosition();
 		vector ori = GetOrientation();
 		for (int i = 0; i < 3; i++)
 			g_Game.CreateObjectEx("WoodenLog", pos + Vector(Math.RandomFloat(-1.5, 1.5), 0.3, Math.RandomFloat(-1.5, 1.5)), ECE_PLACE_ON_SURFACE);
@@ -253,6 +253,8 @@ class PF_Bush_Base extends ItemBase
 		if (stump)
 		{
 			stump.SetOrientation(ori);
+			// pos is the trunk of the previous stage: put this model's trunk there
+			stump.SetPosition(stump.GetPosition() - stump.GetTrunkOffset());
 			stump.SetFirstPlantedAt(firstPlantedAt);
 			stump.SetOwnerId(ownerId);
 			stump.SetGrowFactor(growFactor);
@@ -271,10 +273,29 @@ class PF_Bush_Base extends ItemBase
 		return m_NextStage != "" && now - m_PlantedAt >= m_GrowSeconds * m_GrowFactor;
 	}
 
+	// not every vanilla tree model has its trunk at the model origin (forest oak t_quercusrobur_2fc: 2-3 m off,
+	// so the grown tree stood away from the seedling). Config pf_trunk[] = {x, z}: trunk in model space, measured by
+	// a ray survey (tools/trunk_survey.txt, written by gen_species.py). Missing = trunk at the origin.
+	vector GetTrunkOffset()
+	{
+		array<float> trunk = new array<float>();
+		g_Game.ConfigGetFloatArray("CfgVehicles " + GetType() + " pf_trunk", trunk);
+		if (trunk.Count() < 2)
+			return vector.Zero;
+		vector offset = ModelToWorld(Vector(trunk[0], 0, trunk[1])) - GetPosition();
+		offset[1] = 0;
+		return offset;
+	}
+
+	vector GetTrunkPosition()
+	{
+		return GetPosition() + GetTrunkOffset();
+	}
+
 	// no SetModel in script: the next stage is a new entity of another class at the same spot
 	void Grow()
 	{
-		vector pos = GetPosition();
+		vector pos = GetTrunkPosition();
 		vector ori = GetOrientation();
 		PF_Log.Debug("" + GetType() + " grew into " + m_NextStage + " at " + pos.ToString());
 		// final stage reached by growing (not a cut bush growing back): the owner's pool may be over the limit
@@ -387,7 +408,9 @@ class PF_Bush_Base extends ItemBase
 			return;
 		}
 		vector pos = GetPosition();
-		float terrainY = g_Game.SurfaceY(pos[0], pos[2]);
+		// terrain under the trunk, not under the model origin (GetTrunkOffset)
+		vector trunk = pos + GetTrunkOffset();
+		float terrainY = g_Game.SurfaceY(trunk[0], trunk[2]);
 		// trees on a slope: the lowest terrain around the trunk, so the downhill roots don't hang in the air
 		// (test 2026-10-20: birch on a steep slope floated); the uphill roots go into the slope
 		float radius = PF_Config.Get().TreeSlopeSampleRadius;
@@ -396,7 +419,7 @@ class PF_Bush_Base extends ItemBase
 			for (int i = 0; i < 8; i++)
 			{
 				float angle = i * Math.PI2 / 8;
-				terrainY = Math.Min(terrainY, g_Game.SurfaceY(pos[0] + Math.Cos(angle) * radius, pos[2] + Math.Sin(angle) * radius));
+				terrainY = Math.Min(terrainY, g_Game.SurfaceY(trunk[0] + Math.Cos(angle) * radius, trunk[2] + Math.Sin(angle) * radius));
 			}
 		}
 		float groundY = terrainY + GetGroundOffset();

@@ -31,6 +31,7 @@ modded class MissionServer
 		{
 			PF_Registry.NotifyOwner(identity.GetId());
 			PF_Territory.SendTo(identity);
+			PF_Frozen.SendTo(identity);
 		}
 		PF_DevTune.OnPlayerConnected(player);	// DEV: TreeLineup
 	}

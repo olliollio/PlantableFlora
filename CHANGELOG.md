@@ -3,6 +3,24 @@
 Format follows [Keep a Changelog](https://keepachangelog.com/). The version is `version` in `release/mod.cpp`.
 Config changes: new keys are added to an existing `config.json` automatically, existing values stay.
 
+## [0.3.0] - 2026-10-23
+
+### Added
+- Cutting small wild trees and saplings that the game treats as bushes (small spruces and pines, beech/oak/birch saplings) now can give the matching tree seed (forest models give the forest seed). Livonia's dwarf birch and Manchurian hazel give the dwarf birch / hazel seed. Works on every map with these models (Chernarus, Livonia, Frostline, Deer Isle).
+- Black poplar is plantable again (the tall, narrow roadside tree; grows to 34.5 m, the tallest planted tree). "Search for seeds" on a wild black poplar gives its seed; loot entry in `types_PlantableFlora.xml`.
+- Snowy areas: a planted spruce, birch or dwarf birch takes the look of the wild plants around it. If most wild trees nearby are snow-covered (Frostline winter models, Deer Isle snow spruces) it grows the snowy version, next to frozen spruces the frozen one. Same seed as before. Species without a snowy model refuse to grow there ("Too cold here").
+- Frozen ground on winter maps: snow ground needs a fire before you can dig a planting hole or plant. A fireplace or fire barrel burning hot for 5 minutes thaws the ground within 2 m, and it stays thawed for 30 minutes after the fire is out. Frostline: the snow surfaces (brown grass stays plantable as before); Namalsk: snow and snowy grass; other winter maps (e.g. Winter Chernarus): every surface with the vanilla melt patch under fires. New settings `FrozenGround`, `ThawBurnMinutes`, `ThawMinutes`, `ThawRadius`, `FrozenSurfaces` (admin guide 3.6).
+
+### Changed
+- Every plant gets a random rotation when planted. Before, plants of one species planted facing the same way grew into identical trees.
+- Forest oak grows into the full forest oak (28.7 m) instead of the small one, which looked like the middle stage.
+
+### Fixed
+- Some grown trees stood up to 4 m away from where the seedling was planted (forest oak, fig, olive, hornbeam, Turkish pine, date palm, and up to 0.8 m for several others): the game's tree models don't all have the trunk in the middle. Every stage and the stump now stand on the planted spot. Already grown trees stay where they are.
+
+### Config
+- New keys: `FrozenGround` (true), `ThawBurnMinutes` (5), `ThawMinutes` (30), `ThawRadius` (2), `FrozenSurfaces` ([]). Added to an existing `config.json` automatically.
+
 ## [0.2.0] - 2026-10-22
 
 ### Added
